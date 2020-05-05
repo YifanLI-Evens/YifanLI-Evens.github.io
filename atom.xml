@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yifan Li&#39;s Homepage</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-04-29T16:29:30.844Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Fredrick Li</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&#39;menu&#39;</title>
+    <link href="http://yoursite.com/2019/08/30/menu/"/>
+    <id>http://yoursite.com/2019/08/30/menu/</id>
+    <published>2019-08-30T11:06:06.000Z</published>
+    <updated>2020-04-29T16:29:30.844Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p><a href="/files/CV.pdf">Curriculum Vitae</a></p></li><li><p><a href="/notes/">Notes</a></p></li><li><p><a href="/related_links/">Related Links</a></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;/files/CV.pdf&quot;&gt;Curriculum Vitae&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;/notes/&quot;&gt;Notes&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;/related_
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CCP&#39;</title>
+    <link href="http://yoursite.com/2019/08/30/CCP/"/>
+    <id>http://yoursite.com/2019/08/30/CCP/</id>
+    <published>2019-08-30T09:43:07.000Z</published>
+    <updated>2019-08-30T09:43:45.178Z</updated>
+    
+    <content type="html"><![CDATA[<p>#Fuck CCP</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#Fuck CCP&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Yifan Li</title>
+    <link href="http://yoursite.com/2019/08/30/home/"/>
+    <id>http://yoursite.com/2019/08/30/home/</id>
+    <published>2019-08-30T04:55:44.952Z</published>
+    <updated>2020-04-29T16:57:59.759Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="yifan-li">Yifan Li</h1><p>Email: yifan at ibs dot re dot kr</p><h2 id="current-position">Current Position</h2><p><em>Postdoctoral research fellow</em> in <a href="http://cgp.ibs.re.kr" target="_blank" rel="noopener">Center for Geometry and Physics</a>, Institute for Basic Science (IBS)</p><h2 id="education">Education</h2><ul><li>2010-2014 <em>Bachelor of Science</em> in Department of Mathematical Science, Tsinghua University</li><li>2014  Exchange study in Departement de Mathematiques et Applications,  l’Ecole normale superieure</li><li>2014-2019 <em>Doctor of Philosophy</em> under the supervise of Prof. Li Si, in Yau Mathematical Sciences Center, Tsinghua University</li></ul><h2 id="research-interest">Research Interest</h2><p>Geometry and topology, mathematical physics. Specifically, non-commutative geometry and mirror symmetry, including Koszul duality theory, Landau-Ginzburg models, Frobenius manifolds, variation of semi-infinite Hodge structures, deformation quantization and cohomological field theory.</p><h2 id="publication-and-preprints">Publication and Preprints</h2><ul><li>with S. Li &amp; W. He, G-twisted braces and orbifold Landau-Ginzburg Models, <em>Communications in Mathematical Physics</em> 373.1 (2020): 175-217.</li><li>with S. Li &amp; W. He, Unfolding of Orbifold LG B-Models: A Case Study, <em>Pure and Applied Mathematics Quarterly</em> 14.3 (2018): 443-465.</li></ul><h2 id="invited-talks">Invited Talks</h2><ul><li>09/11/2017 <em>Hochschild cohomology of curved algebras and orbifold Landau-Ginzburg models</em>, Symplectic Geometry and Mathematical Physics Seminar, Peking University</li><li>28/11/2017 <em>Orbifold Landau-Ginzburg models via algebraic methods</em>, Mathematical Physics Seminar, Sichuan University</li><li>15/01/2018 <em>Orbifold Landau-Ginzburg models</em>, East Asian Core Doctoral Forum on Mathematics 2018, Beijing, China</li><li>20/07/2018 <em>Mathematical aspects of Landau-Ginzburg models</em>, Poster Session, <strong>String-Math 2018</strong>, Tohoku University</li><li>13/11/2018 <em>Hochschild cohomology of curved algebras and orbifold Landau-Ginzburg models</em>,  Colloquium &amp; Seminars, ShanghaiTech University</li><li>24/11/2018 <em>Hochschild Cohomology of Curved Algebras and Orbifold Landau-Ginzburg B-models</em>, Program for the Mini-Workshop on Hochschild Cohomology and Related Topics III, East China Normal University</li><li>13/06/2019 <em>Algebraic Approaches to Orbifold Landau-Ginzburg B-models</em>, <strong>ICCM2019</strong>, Beijing, China</li><li>11/07/2019 <em>Algebraic Approaches to Orbifold LG B-models</em>, Seminars, Huazhong University of Science and Technology.</li><li>10/09/2019 <em>Moduli Space of Quiver Representations</em>, Seminars, Zhejiang University.</li><li>11/25/2019 <em>A Survey for LG/LG Mirror Symmetry</em>, Seminars, IBS-CGP.</li></ul><h2 id="teaching-experiences">Teaching Experiences</h2><ul><li>2017-2018  Teaching assistant and grader, Calculus given by Prof. Li Tiecheng, Tsinghua University</li><li>Fall 2016  Teaching assistant and grader, Topology given by Prof. Li Si, Tsinghua University</li><li>Spring 2017  Teaching assistant and grader, Algebraic Topology given by Prof. Li Si, Tsinghua University</li><li>Spring 2016  Teaching assistant and grader, Classical Mechanics by Prof. Lu Wenxuan, Tsinghua Univesity</li><li>Fall 2015  Teaching assistant and grader, Linear Algebra given by Prof. Li Si, Tsinghua University</li><li>2014-2015 Teaching assistant and grader, Calculus given by Prof. Zhang Jiming, Tsinghua University</li><li>Summer 2014 Teaching Assistant, Linear Algebra given by Prof. Bong Lian, Tsinghua Summer Mathcamp for High School Students</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;yifan-li&quot;&gt;Yifan Li&lt;/h1&gt;
+&lt;p&gt;Email: yifan at ibs dot re dot kr&lt;/p&gt;
+&lt;h2 id=&quot;current-position&quot;&gt;Current Position&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Postdoctoral
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
