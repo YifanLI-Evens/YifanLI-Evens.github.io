@@ -1,100 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
 
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
 
-    
-      <link rel="icon" href="/favicon.ico">
-    
 
-    <title>
-        
-          Learning seminar on quantum topology and related topics - Yifan Li&#39;s Homepage
-        
-    </title>
 
-    <!-- Spectre.css framework (v0.5.8) -->
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 
-    <!-- Noto Sans TC -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
-    <!-- Noto Sans SC -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet">
-    <!-- Noto Sans -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 
-    <!-- theme css & js -->
-    <link rel="stylesheet" href="/css/spectre_custom.css">
-    <link rel="stylesheet" href="/css/book.css">
-    <script src="/js/book.js"></script>
 
-    <!-- tocbot -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 
-    <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-    <!-- katex -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
-    
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Yifan Li's Homepage" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="This is an informal and convivial space whose main goal is to learn and discuss about low-dimensional topology and related topics. People who are completely new to the subject are very welcome to join">
+<meta name="keywords" content="Yifan Li, Mathematics">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Learning seminar on quantum topology and related topics">
+<meta property="og:url" content="http://yoursite.com/research/LDT/index.html">
+<meta property="og:site_name" content="Yifan Li&#39;s Homepage">
+<meta property="og:description" content="This is an informal and convivial space whose main goal is to learn and discuss about low-dimensional topology and related topics. People who are completely new to the subject are very welcome to join">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/research/LDT/files/pachner_move_2.gif">
+<meta property="og:image" content="http://yoursite.com/research/LDT/files/Poster_LDT_small.jpg">
+<meta property="og:image" content="http://yoursite.com/research/LDT/files/Poster_Turaev_small.jpg">
+<meta property="og:image" content="http://yoursite.com/research/LDT/files/ckvkastrks.jpg">
+<meta property="og:image" content="http://yoursite.com/research/LDT/files/ibs_logo2.jpg">
+<meta property="og:image" content="http://yoursite.com/research/LDT/files/logo-bk.png">
+<meta property="og:image" content="http://yoursite.com/research/LDT/files/CRT_logo.png">
+<meta property="og:updated_time" content="2022-03-02T09:16:28.026Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learning seminar on quantum topology and related topics">
+<meta name="twitter:description" content="This is an informal and convivial space whose main goal is to learn and discuss about low-dimensional topology and related topics. People who are completely new to the subject are very welcome to join">
+<meta name="twitter:image" content="http://yoursite.com/research/LDT/files/pachner_move_2.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/research/LDT/">
+
+
+
+
+
+  <title>Learning seminar on quantum topology and related topics | Yifan Li's Homepage</title>
+  
+
+
+
+
+
+
+
+
 </head>
 
-<body>
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-<div class="container">
-  <div class="book-container">
-    <div class="columns">
-      <div class="column col-2 hide-lg">
-        <div class="book-sidebar">
-  <h4 class="site-meta">
-    <a href="/">Yifan Li&#39;s Homepage</a>
-  </h4>
-  <div class="sidebar-content">
-    <ul>
-<li>
-<p><a href="/files/CV.pdf">Curriculum Vitae</a></p>
-</li>
-<li>
-<p><a href="/research/">Research</a></p>
-</li>
-<li>
-<p><a href="/related_links/">Related Links</a></p>
-</li>
-</ul>
+  
+  
+    
+  
 
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yifan Li's Homepage</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
 </div>
 
-<script src="/js/book-sidebar.js"></script>
-      </div>
+<nav class="site-nav">
+  
 
-      <div class="column col-8 col-lg-12">
-        <div class="book-content">
-          
-<article id="page">
-  <h1>Learning seminar on quantum topology and related topics</h1>
-  <p>This is an informal and convivial space whose main goal is to learn and discuss about low-dimensional topology and related topics. People who are completely new to the subject are very welcome to join us. If you would like to receive information about our activities please write an email to</p>
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/cv/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-research">
+          <a href="/research/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Research
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/related_links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Links
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">Learning seminar on quantum topology and related topics</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <p>This is an informal and convivial space whose main goal is to learn and discuss about low-dimensional topology and related topics. People who are completely new to the subject are very welcome to join us. If you would like to receive information about our activities please write an email to</p>
 <ul>
 <li><strong><a href="mailto:andersonvera@postech.ac.kr" target="_blank" rel="noopener">Anderson Vera</a></strong> (BK21 Four Mathematical Science division at POSTECH)</li>
 <li><strong><a href="mailto:mksong416@gmail.com" target="_blank" rel="noopener">Minkyoung Song</a></strong> (Center for Research in Topology at POSTECH)</li>
 <li><strong><a href="mailto:yifan@ibs.re.kr" target="_blank" rel="noopener">Yifan Li</a></strong> (IBS-CGP)</li>
 </ul>
-<h2 id="spring-2022"><strong>Spring, 2022</strong></h2>
+<h2 id="spring-2022">Spring, 2022</h2>
 <hr>
-<img src="files/pachner_move_2.gif" alt="Pachner moves" style="width:200px;height:200px;">
+<img src="files/pachner_move_2.gif" alt="Pachner moves" style="width:200px;height:200px;;margin:20px 20px" align="left">
 <p>During this season of the Learning seminar we will focus on the study of quantum invariants<br>
 of 3-manifolds by using Temperley-Lieb algebras. We will closely follow the book:</p>
-<ol>
-<li>“<strong>Temperley-Lieb Recoupling Theory and Invariants of 3-Manifolds</strong>” by Louis H. Kauffman and Sóstenes L. Lins)</li>
-</ol>
+<ul>
+<li><em>Temperley-Lieb Recoupling Theory and Invariants of 3-Manifolds</em> by Louis H. Kauffman and Sóstenes L. Lins)</li>
+</ul>
 <p>Our main goal is understanding the definition of Turaev-Viro and Reshetikhin-Turaev<br>
 invariants and their explicit computation. In particular we will learn about:</p>
 <ul>
@@ -104,36 +297,55 @@ invariants and their explicit computation. In particular we will learn about:</p
 <li>Reshetikhin-Turaev invariants.</li>
 </ul>
 <p>Here is a more detailed <a href="files/2022_01_learning_seminar_LDT.pdf">introduction</a>.</p>
-<p><a href="files/Poster_LDT.jpg"> <img src="files/Poster_LDT_small.jpg" alt="Poster_QT" style="height:200px;"> </a></p>
+<p><a href="files/Poster_LDT.jpg"> <img src="files/Poster_LDT_small.jpg" alt="Poster_QT" style="height:200px;;margin:20px 20px" align="right"> </a></p>
 <p>Starting from March, the learning seminar will take place every <strong>Monday</strong>, <strong>from 3pm to 5pm</strong> (KST=GMT+9). If you will participate in the seminar or if you want to receive information about the seminar (including Zoom link) please answer the survey (even if you will not give a talk) <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbDDqRgcV2xsuJWFwziAr4NOz7G71DQ_Eb1CW7eXdupgK_bA/viewform?usp=sf_link" target="_blank" rel="noopener">here</a>.</p>
 <p>If you are willing to give the presentation, please choose all the chapters you want to present. We would be really appreciative if you could complete the survey before <strong>Feb. 25th</strong>. If you have any questions and suggestions, please don’t hesitate to contact us.</p>
 <br>
-<details>
-	<summary> Below is the schedule of the talks as well as some notes or videos. </summary>
+<div><div class="fold_hider"><div class="close hider_title">Schedule</div></div><div class="fold">
 <table>
 <thead>
 <tr>
 <th style="text-align:left">Speaker</th>
-<th style="text-align:left">Time    </th>
+<th style="text-align:center">Time</th>
 <th style="text-align:left">Topic</th>
 <th style="text-align:center">Archive</th>
 </tr>
 </thead>
-<tbody></tbody>
+<tbody>
+<tr>
+<td style="text-align:left">Vladimir Turaev</td>
+<td style="text-align:center">Mar. 04</td>
+<td style="text-align:left">Introduction to Topological Quantum Field Theories</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Anderson Vera</td>
+<td style="text-align:center">Mar. 07</td>
+<td style="text-align:left">Bracket polynomial, Temperley-Lieb algebra</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Yifan Li</td>
+<td style="text-align:center">Mar. 14</td>
+<td style="text-align:left">Jones-Wenzl projectors</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
 </table>
-</details>
+
+</div></div>
 <br>
-<h2 id="special-lectures"><strong>Special Lectures</strong></h2>
+<h3 id="special-lectures">Special Lectures</h3>
 <hr>
-<h5 id="introduction-to-topological-quantum-field-theories"><strong>Introduction to Topological Quantum Field Theories</strong></h5>
+<h4 id="introduction-to-topological-quantum-field-theories">Introduction to Topological Quantum Field Theories</h4>
 <p><strong>Speaker:</strong> <a href="https://math.indiana.edu/about/faculty/touraev-vladimir.html" target="_blank" rel="noopener">Prof. Vladimir Turaev</a><br>
 <strong>Time:</strong> March 4, 9-10 am (KST = BJT+1)<br>
-<strong>Venue:</strong> Zoom Meeting<br>
-<strong>Abstract:</strong> The lecture will be an introduction to quantum topology for beginners (including undergraduates). I will start by a  brief description of the Alexander and Jones polynomials of knots and links in the 3-dimensional sphere.  Then I will introduce the concept of an n-dimensional topological quantum field theory (TQFT) and discuss algebraic sources of such theories for n=2 and n=3. Preliminary knowledge of the following notions is required:  a manifold of a given dimension n=1,2,3, … a manifold with boundary, a homeomorphism of manifolds, an algebra, a module over an algebra, a group, a category, a knot in the 3-dimensional sphere, a link in the 3-dimensional sphere, a braid on n strings.</p>
+<strong>Venue:</strong> Zoom Meeting</p>
+<p><a href="files/Poster_Turaev.jpg"> <img src="files/Poster_Turaev_small.jpg" alt="Poster_Turaev" style="height:200px;margin:20px 20px" align="right"> </a></p>
+<p><strong>Abstract:</strong> The lecture will be an introduction to quantum topology for beginners (including undergraduates). I will start by a  brief description of the Alexander and Jones polynomials of knots and links in the 3-dimensional sphere.  Then I will introduce the concept of an n-dimensional topological quantum field theory (TQFT) and discuss algebraic sources of such theories for n=2 and n=3. Preliminary knowledge of the following notions is required:  a manifold of a given dimension n=1,2,3, … a manifold with boundary, a homeomorphism of manifolds, an algebra, a module over an algebra, a group, a category, a knot in the 3-dimensional sphere, a link in the 3-dimensional sphere, a braid on n strings.</p>
 <p>Click <a href="https://docs.google.com/forms/d/e/1FAIpQLSdy9an9siFH5Z2pP_i5AT3dn8wGIHuibJ1Q6Wn7RCIjXvY0Wg/viewform?usp=sf_link" target="_blank" rel="noopener">here</a> for registration.</p>
-<p><a href="files/Poster_Turaev.jpg"> <img src="files/Poster_Turaev_small.jpg" alt="Poster_Turaev" style="height:200px;"> </a></p>
 <br>
-<h2 id="2021"><strong>2021</strong></h2>
+<h2 id="2021">2021</h2>
 <hr>
 <iframe scrolling="no" title="Borromean rings" src="https://www.geogebra.org/material/iframe/id/n8nrwsn9/width/360/height/209/border/888888/sfsb/false/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="360px" height="209px" style="border:0px;"> </iframe>
 <p>During this year we studied the theory of quantum and Vassiliev invariants of knots and their relations through the Kontsevich integral. Our main references were the books:</p>
@@ -141,14 +353,12 @@ invariants and their explicit computation. In particular we will learn about:</p
 <li>“<em>An introduction to Quantum and Vassiliev Knot invariants</em>” by David M. Jackson and Iain Moffat.</li>
 <li>“<em>Quantum Invariants. A study of knots, 3-manifolds and their sets</em>” by Tomotada Ohstuki.</li>
 </ol>
-<details>
-	<summary> Below is the schedule of the talks as well as some notes or videos. </summary>
+<div><div class="fold_hider"><div class="close hider_title">Archive</div></div><div class="fold">
 <table>
 <thead>
 <tr>
 <th style="text-align:left">Speaker  </th>
-<th style="text-align:left">Time</th>
-<th style="text-align:center"> </th>
+<th style="text-align:center">Time</th>
 <th style="text-align:left">Topic</th>
 <th style="text-align:center">Archive</th>
 </tr>
@@ -156,402 +366,476 @@ invariants and their explicit computation. In particular we will learn about:</p
 <tbody>
 <tr>
 <td style="text-align:left">Seonhwa Kim (SNU)</td>
-<td style="text-align:left">13/07</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">13/07</td>
 <td style="text-align:left">Basic knot theory and some knot invariants</td>
 <td style="text-align:center"><!--[Video](https://1drv.ms/v/s!Aq3vKjnm0oJBguk2x3SxQ1WO4k8MQQ?e=gfqEYA)--></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Minkyoung Song (IBS-CGP)</td>
-<td style="text-align:left">20/07</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">20/07</td>
 <td style="text-align:left">Braids and its R-matrix representations</td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Anderson Vera (Postech)</td>
-<td style="text-align:left">27/07</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">27/07</td>
 <td style="text-align:left">Knot invariants through R-matrix representations</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBgulDRoE9_5I4wxqeFQ?e=2rOZuY" target="_blank" rel="noopener">Video1</a>, <a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk3shLx7qEF2D4tnQ?e=nKgpEb" target="_blank" rel="noopener">video2</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Yifan Li (IBS-CGP)</td>
-<td style="text-align:left">03/08</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">03/08</td>
 <td style="text-align:left">Operator invariants of tangles</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBgulB2vgAGCKLl6PBTQ?e=G4E8Ov" target="_blank" rel="noopener">Video</a>, <a href="/research/LDT/files/Tangles_And_Operator_Invariants.pdf">note</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Yong-Geun Oh (IBS-CGP, Postech)</td>
-<td style="text-align:left">10/08</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">10/08</td>
 <td style="text-align:left">Ribbon Hopf algebras I</td>
 <td style="text-align:center"><!--[Video](https://1drv.ms/v/s!Aq3vKjnm0oJBgulFbrGd41UHViUYtA?e=k3uMrm)--></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Yong-Geun Oh (IBS-CGP, Postech)</td>
-<td style="text-align:left">17/08</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">17/08</td>
 <td style="text-align:left">Ribbon Hopf algebras II</td>
 <td style="text-align:center"><!--[Video](https://1drv.ms/v/s!Aq3vKjnm0oJBgulGrV1JjaX-yuh0bg?e=qNGVqN)--></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Anderson Vera (Postech)</td>
-<td style="text-align:left">24/08</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">24/08</td>
 <td style="text-align:left">Ribbon Hopf algebras III</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBgulEReiKn2Scdp49CQ?e=9qK2wR" target="_blank" rel="noopener">Video1</a>, <a href="https://1drv.ms/v/s!Aq3vKjnm0oJBgulCa_JJhBzS5qTgdA?e=Ifnryq" target="_blank" rel="noopener">video2</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Yifan Li (IBS-CGP)</td>
-<td style="text-align:left">31/08</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">31/08</td>
 <td style="text-align:left">Turaev-Reshetikhin invariants</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk7kGWPqSEr7yOkQQ?e=aEFmBW" target="_blank" rel="noopener">Video</a>, <a href="/research/LDT/files/Reshetikhin_Turaev_Invariants.pdf">note</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Minkyoung Song (IBS-CGP)</td>
-<td style="text-align:left">06/09</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">06/09</td>
 <td style="text-align:left">Fundamentals of Vassiliev invariants</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk9987FyDn02mX7ug?e=JDom4y" target="_blank" rel="noopener">Video</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Seonhwa Kim (SNU)</td>
-<td style="text-align:left">13/09</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">13/09</td>
 <td style="text-align:left">Chord diagrams I</td>
 <td style="text-align:center"><!--[Video](https://1drv.ms/v/s!Aq3vKjnm0oJBguk_mMKS67Czncs7gg?e=2L9hzf)--></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Seonhwa Kim (SNU)</td>
-<td style="text-align:left">27/09</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">27/09</td>
 <td style="text-align:left">Chord diagrams II</td>
 <td style="text-align:center"><!--[Video1](https://1drv.ms/v/s!Aq3vKjnm0oJBguk-co_BT6bePz3gSg?e=AbQgyr), [video2](https://1drv.ms/v/s!Aq3vKjnm0oJBgulALlM_aEn1umL0HA?e=JGcrnB)--></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Yifan Li (IBS-CGP)</td>
-<td style="text-align:left">18/10</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">18/10</td>
 <td style="text-align:left">Jacobi diagrams I</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk8NwFEZr0jv57LBg?e=WJN2KT" target="_blank" rel="noopener">Video</a>, <a href="/research/LDT/files/Jacobi_Diagrams.pdf">note</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Anderson Vera (Postech)</td>
-<td style="text-align:left">25/10</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">25/10</td>
 <td style="text-align:left">Jacobi diagrams II</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk13aNtlioiO7-i9Q?e=5DlxPd" target="_blank" rel="noopener">Video</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Myeong-Sang Cho (Postech)</td>
-<td style="text-align:left">01/11</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">01/11</td>
 <td style="text-align:left">Lie algebra weight systems I</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk0QjpfvHP_iXnGQw?e=9LuD6Ws" target="_blank" rel="noopener">Video</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Myeong-Sang Cho (Postech)</td>
-<td style="text-align:left">08/11</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">08/11</td>
 <td style="text-align:left">Lie algebra weight systems II</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk6x4R_1StqIwvyKA?e=UkehEK" target="_blank" rel="noopener">Video</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Anderson Vera (Postech)</td>
-<td style="text-align:left">29/11</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">29/11</td>
 <td style="text-align:left">q-tangles and Jacobi diagrams on 1-manifols I</td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Anderson Vera (Postech)</td>
-<td style="text-align:left">06/12</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">06/12</td>
 <td style="text-align:left">q-tangles and Jacobi diagrams on 1-manifols II</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk54hjEfQKltcYe8w?e=rx31ld" target="_blank" rel="noopener">Video</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Yifan Li (IBS-CGP)</td>
-<td style="text-align:left">13/10</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">13/10</td>
 <td style="text-align:left">Construction of Kontsevich Integral</td>
 <td style="text-align:center"><a href="https://1drv.ms/v/s!Aq3vKjnm0oJBguk54hjEfQKltcYe8w?e=rx31ld" target="_blank" rel="noopener">Video</a>, <a href="/research/LDT/files/Kontsevich_Invariant.pdf">note</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Seonhwa Kim (SNU)</td>
-<td style="text-align:left">20/12</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">20/12</td>
 <td style="text-align:left">Universality properties of Kontsevich Invariants</td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Xinxing Tang (BIMSA)</td>
-<td style="text-align:left">21/12</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">21/12</td>
 <td style="text-align:left">The KZ equations and the Drinfel’d associator I</td>
 <td style="text-align:center"><a href="https://drive.google.com/file/d/1-pSrk2HsYUGzaM3F2ZHT7MAAXklxxkoB/view?usp=sharing" target="_blank" rel="noopener">Video</a></td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-<td style="text-align:left"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
 <td style="text-align:left">Xinxing Tang (BIMSA)</td>
-<td style="text-align:left">22/12</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">22/12</td>
 <td style="text-align:left">The KZ equations and the Drinfel’d associator II</td>
 <td style="text-align:center"><a href="https://drive.google.com/file/d/1-qVAZuI2H1HpFtY63uy9YIlhvUXXxWkq/view?usp=sharing" target="_blank" rel="noopener">Video</a>, <a href="/research/LDT/files/The_Drinfeld_Kohnov_Theorem_II.pdf">note</a></td>
 </tr>
 </tbody>
 </table>
-</details>
+
+</div></div>
 <br>
 <br>
 <br>
 <br>
-<h4 id="news-links">News/Links</h4>
+<h2 id="news-links">News/Links</h2>
 <hr>
-<details>
-	<summary> News/Related links </summary>
+<div><div class="fold_hider"><div class="close hider_title">News/Related</div></div><div class="fold">
 <ul>
 <li> <a href="https://www.srmc.pku.edu.cn/rl/134293.htm" target="_blank" rel="noopener"><b>Sino-Russian Mathematics Center-JLU Colloquium</b></a> (Jan, 2022)</li>
 <li> Nicolai Reshetikhin, <a href="https://tqfts.com/quantum-groups-and-invariants-of-3-manifolds/" target="_blank" rel="noopener"><b>Quantum groups and Invariants of 3-manifolds</b></a> (Spring, 2022)</li>
-<li><a href="https://u.osu.edu/ckvkastrks/" target="_blank" rel="noopener"> <img src="files/ckvkastrks.jpg" alt="ckvkastrks" style="height:13px;"> </a>  <a href="https://u.osu.edu/ckvkastrks/" target="_blank" rel="noopener"><b> Classical knots, virtual knots and algebraic structures related to knots</b></a>, The Ohio State University </li>
+<li><a href="https://u.osu.edu/ckvkastrks/" target="_blank" rel="noopener"> <img src="files/ckvkastrks.jpg" alt="ckvkastrks" style="height:20px;" align="left"> </a>  <a href="https://u.osu.edu/ckvkastrks/" target="_blank" rel="noopener"><b> Classical knots, virtual knots and algebraic structures related to knots</b></a>, The Ohio State University </li>
 <li> <b> <a href="https://lrobert.perso.math.cnrs.fr/kos.html" target="_blank" rel="noopener"> [K-OS] Knot Online Seminar  </a></b>, CNRS, Universit&eacute; de Paris, Universit&auml;t Regensburg </li>
 <li><b>2022 TAPU Winter School on Knots and Related Topics, <a href="files/2022_TAPU_Poster.pdf">Poster</a>, <a href="files/Abstracts_TAPU.pdf">abstract </a></b> (Feb, 2022)</li>
 <li><a href="https://www.ktrt-seminars.com/" target="_blank" rel="noopener"><b>Seminars
 on knot theory and related topics</b></a></li>
 </ul>
-</details>
+</div></div>
 <br>
-<details>
-	<summary> Calendar </summary>
+<div><div class="fold_hider"><div class="close hider_title">Calendar</div></div><div class="fold">
 <iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23039BE5&ctz=Asia%2FSeoul&mode=MONTH&showTabs=1&showTz=1&showCalendars=1&showTitle=1&showNav=1&showDate=0&title=TQFT%20in%20Pohang&src=MTQ1Zjc2Y2w5ODgxMTFmM2sxazc3N2JsNHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=MXVhNGVtMmNmMWxjbWpmNnM1MHJwaGt2dGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23C0CA33&color=%23C0CA33" style="border-width:0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
-</details>
-<p align="right">  
+</div></div>
+<p>  
 <br>
 <br>
 <br>
-<a href="https://cgp.ibs.re.kr/" target="_blank" rel="noopener">
-  <img src="files/ibs_logo2.jpg" alt="IBS-CGP" style="height:30px;">
+<a href="https://cgp.ibs.re.kr/" class="fancybox" target="_blank" rel="noopener">
+  <img src="files/ibs_logo2.jpg" alt="IBS-CGP" style="height:30px;" align="right">
 </a> &nbsp; 
-<a href="http://bk21math.postech.ac.kr/" target="_blank" rel="noopener">
-  <img src="files/logo-bk.jpg" alt="Postech-BK21" style="height:30px;">
+<a href="http://bk21math.postech.ac.kr/" class="fancybox" target="_blank" rel="external">
+  <img src="files/logo-bk.png" alt="Postech-BK21" style="height:30px;" align="right">
 </a>
 &nbsp; 
-<img src="files/CRT_logo.png" alt="Postech-CRT" style="height:20px;">
+<img src="files/CRT_logo.png" alt="Postech-CRT" style="height:30px;" align="right">
 </p>
 
-</article>
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
 
-<div id="paginator">
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Frederick</p>
+              <p class="site-description motion-element" itemprop="description">Yifan Li's Homepage</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-2022"><span class="nav-number">1.</span> <span class="nav-text">Spring, 2022</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#special-lectures"><span class="nav-number">1.1.</span> <span class="nav-text">Special Lectures</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#introduction-to-topological-quantum-field-theories"><span class="nav-number">1.1.1.</span> <span class="nav-text">Introduction to Topological Quantum Field Theories</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021"><span class="nav-number">2.</span> <span class="nav-text">2021</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#news-links"><span class="nav-number">3.</span> <span class="nav-text">News/Links</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Frederick</span>
+
   
 </div>
 
-        </div>
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
+    </footer>
 
-      <div class="column col-2 hide-lg">
-        <div class="book-toc">
-  <div class="book-tocbot">
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
-  <div class="book-tocbot-menu">
-    <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
-    <a onclick="go_top()">Back to top</a>
-    <a onclick="go_bottom()">Go to bottom</a>
-  </div>
-</div>
 
-<script>
-tocbot.init({
-  tocSelector: '.book-tocbot',
-  contentSelector: '.book-post',
-  headingSelector: 'h1, h2, h3, h4, h5',
-  collapseDepth: 2,
-  orderedList: false,
-  scrollSmooth: false,
-});
+  
 
-function expand_toc(){
-  var b = document.querySelector(".book-toc-expand");
-  tocbot.init({
-    tocSelector: '.book-tocbot',
-    contentSelector: '.book-post',
-    headingSelector: 'h1, h2, h3, h4, h5',
-    collapseDepth: 6,
-    orderedList: false,
-    scrollSmooth: false,
-  });
-  b.setAttribute("onclick", "collapse_toc()");
-  b.innerHTML = "Collapse all"
-}
-
-function collapse_toc(){
-  var b = document.querySelector(".book-toc-expand");
-  tocbot.init({
-    tocSelector: '.book-tocbot',
-    contentSelector: '.book-post',
-    headingSelector: 'h1, h2, h3, h4, h5',
-    collapseDepth: 2,
-    orderedList: false,
-    scrollSmooth: false,
-  });
-  b.setAttribute("onclick", "expand_toc()");
-  b.innerHTML = "Expand all"
-}
-
-function go_top() {
-  window.scrollTo(0, 0);
-}
-
-function go_bottom() {
-  window.scrollTo(0, document.body.scrollHeight);
-}
-
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
