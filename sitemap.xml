@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/research/LDT/index.html</loc>
+    
+    <lastmod>2022-03-03T12:02:24.575Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/related_links/index.html</loc>
     
     <lastmod>2022-03-02T11:14:22.713Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2022/03/01/home/</loc>
     
     <lastmod>2022-03-02T11:01:25.161Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/research/LDT/index.html</loc>
-    
-    <lastmod>2022-03-02T10:32:02.290Z</lastmod>
     
   </url>
   
