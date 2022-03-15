@@ -77,17 +77,18 @@
 
 
 
-<meta name="description" content="Yifan Li&apos;s Homepage">
+<meta name="description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
 <meta name="keywords" content="Yifan Li, Mathematics">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Yifan Li&#39;s Homepage">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:title" content="Quantum Calculus">
+<meta property="og:url" content="http://yoursite.com/research/Notes/q_Calculus/index.html">
 <meta property="og:site_name" content="Yifan Li&#39;s Homepage">
-<meta property="og:description" content="Yifan Li&apos;s Homepage">
+<meta property="og:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-03-15T14:29:40.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yifan Li&#39;s Homepage">
-<meta name="twitter:description" content="Yifan Li&apos;s Homepage">
+<meta name="twitter:title" content="Quantum Calculus">
+<meta name="twitter:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
 
 
 
@@ -117,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/">
+  <link rel="canonical" href="http://yoursite.com/research/Notes/q_Calculus/">
 
 
 
 
 
-  <title>Archive | Yifan Li's Homepage</title>
+  <title>Quantum Calculus | Yifan Li's Homepage</title>
   
 
 
@@ -142,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,72 +247,50 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 1 post. Keep on posting.
-      </span>
+	<h1 class="post-title" itemprop="name headline">Quantum Calculus</h1>
+
+
+
+</header>
 
       
+      
+      
+      <div class="post-body">
+        
+        
+          <p>This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $q$ as a generic nonzero complex number. But we are also interested in cases when $q$ is a root of $1$.</p>
+<h1 id="i-basic-definitions">I. Basic definitions</h1>
+<p>We begin with $q$-integers. For $ n \geqslant 0 $,</p>
+<p>$$ \tag{I1} [n]_q := \frac{ q^n - q^{ -n } }{ q - q^{ -1 } } = q^{ -n + 1 } + q^{ -n + 3 } + \cdots + q^{ n - 3 } + q^{ n - 1 }. $$</p>
+<p>For simiplicity, we define $[-n]_q = -[n]_q$. Then $[1]_q = 1,[0]_q = 0$. The summation formula is</p>
+<p>$$ \tag{I2} [n+m]_q = q^{m}[n]_q + q^{-n}[m]_q = q^{-m}[n]_q + q^{n}[m]_q. $$</p>
+<p>Using $ \mathrm{(I2)} $, we can write down the product formula, for $m \geqslant n \geqslant 0$,</p>
+<p>$$ \begin{align}<br>
+[m]_q [n]_q &amp; = [m]_q ( q^{- n + 1} + q^{ - n + 3 } + \cdots q^{n - 3} + q^{ n - 1 } ) \\ &amp; = ( [m + n - 1]_q - q^m[n - 1]_q ) + ( [m + n - 3]_q - q^m [n - 3]_q ) + \cdots \\  &amp; \quad + ( [m - n + 1]_q - q^{m} [1 - n]_q ) \\ &amp; = [ m + n - 1 ]_q + [ m + n - 3 ]_q + \cdots [ m - n + 1 ]_q. \tag{I3}<br>
+\end{align}  $$</p>
+<p>We will also define $q$-factorials and $q$-binomial coefficents as</p>
+<p>$$<br>
+[n]<em>q ! = \prod</em>{k=1}^n [n]_q, \quad \left [ \begin {matrix} m \ n \end {matrix} \right ]_q = \frac{[m]_q!}{[n]_q![m-n]_q!}<br>
+$$</p>
 
         
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2022">2022</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2022/03/01/home/" itemprop="url">
-              
-                <span itemprop="name">Yifan Li's Homepage</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2022-03-01T18:43:07+09:00" content="2022-03-01">
-          03-01
-        </time>
       </div>
-
-    </header>
-  </article>
-
-
-
       
-
+      
+      
     </div>
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -319,6 +298,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -341,8 +324,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -391,6 +383,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#i-basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">I. Basic definitions</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -517,6 +525,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
