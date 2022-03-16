@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="Yifan Li&#39;s Homepage">
 <meta property="og:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-03-16T02:24:13.944Z">
+<meta property="og:updated_time" content="2022-03-16T10:04:24.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quantum Calculus">
 <meta name="twitter:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
@@ -267,39 +267,90 @@
         
         
           <p>This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $q$ as a generic nonzero complex number. But we are also interested in cases when $q$ is a root of $1$.</p>
-<h1 id="i-basic-definitions">I. Basic definitions</h1>
+<h1 id="basic-definitions">Basic definitions</h1>
+<hr>
 <p>We begin with $q$-integers. For $ n \geqslant 0 $,</p>
 <p>$$ \tag{I1} [n]_q := \frac{ q^n - q^{ -n } }{ q - q^{ -1 } } = q^{ -n + 1 } + q^{ -n + 3 } + \cdots + q^{ n - 3 } + q^{ n - 1 }. $$</p>
-<p>For simplicity, we define $[-n]_q = -[n]_q$. Then $[1]_q = 1,[0]_q = 0$. The summation formula is</p>
+<p>For simplicity, we define $[-n]_q = -[n]_q$. Then $[1]_q = 1,[0]_q = 0$. The summation formula is <span id="eqI2"></span></p>
 <p>$$ \tag{I2} [n+m]_q = q^{m}[n]_q + q^{-n}[m]_q = q^{-m}[n]_q + q^{n}[m]_q. $$</p>
-<p>Using $ \mathrm{(I2)} $, we can write down the product formula, for $m \geqslant n \geqslant 0$,</p>
+<p>Using <a href="#eqI2">$ \mathrm{(I2)} $</a>, we can write down the product formula, for $m \geqslant n \geqslant 0$,</p>
 <p>$$ \begin{align}<br>
 [m]_q [n]_q &amp; = [m]_q ( q^{- n + 1} + q^{ - n + 3 } + \cdots q^{n - 3} + q^{ n - 1 } ) \\ &amp; = ( [m + n - 1]_q - q^m[n - 1]_q ) + ( [m + n - 3]_q - q^m [n - 3]_q ) + \cdots \\  &amp; \quad + ( [m - n + 1]_q - q^{m} [1 - n]_q ) \\ &amp; = [ m + n - 1 ]_q + [ m + n - 3 ]_q + \cdots [ m - n + 1 ]_q. \tag{I3}<br>
 \end{align}  $$</p>
 <p>We will also define $q$-factorials and $q$-binomial coefficients as</p>
 <p>$$ [n]_q ! =  \prod \limits _{k=1} ^n [n]_q, \quad \left [ \begin{matrix} m \\ n \end{matrix} \right ]_q := \frac{[m]_q!}{[n]_q![m-n]_q!}, \tag{I4} $$</p>
-<p>where $m \geqslant n \geqslant 0$. Using $ \mathrm{(I2)} $ the recursion relation of $q$-binomial coefficients is given by</p>
+<p>where $m \geqslant n \geqslant 0$. Using <a href="#eqI2">$ \mathrm{(I2)} $</a> the recursion relation of $q$-binomial coefficients is given by</p>
 <p>$$<br>
-\left [ \begin{matrix} m+1 \\ n+1 \end{matrix} \right ]_p = q^{ (n-m) } \left [ \begin{matrix} m \\ n \end{matrix} \right ]_p + q^{ (n+1) } \left [ \begin{matrix} m \\ n+1 \end{matrix} \right ]_p. \tag{I5}<br>
+\left [ \begin{matrix} m+1 \\ n+1 \end{matrix} \right ]_q = q^{ (n-m) } \left [ \begin{matrix} m \\ n \end{matrix} \right ]_q + q^{ (n+1) } \left [ \begin{matrix} m \\ n+1 \end{matrix} \right ]_q. \tag{I5}<br>
 $$</p>
-<p>That is all for $q$-numbers. We will then work with functions, i.e., $q$-polynomials or $q$-series, which are usually generating functions of sequences of $q$-numbers. We will also consider $q$-analogue of differential operators, which are usually difference operators.</p>
-<p><strong>Def I.1.</strong> Given any function $ f(x) $ of one variable $ x $, its $q$-differential is<br>
+<p>That is all for $q$-numbers. We will then work with functions<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, i.e., $q$-polynomials or $q$-series, which are usually generating functions of sequences of $q$-numbers. We will also consider $q$-analogue of differential operators, which are usually difference operators.</p>
+<p><strong>Def I.1.</strong> Given any function $ f(x) $ of one variable $ x $, its $q$-differential is <span id="eqI6"></span><br>
 $$<br>
-\partial_p f(x) = \frac{f(qx) - f(q^{-1}x)}{qx - q^{-1}x}. \tag{I6}<br>
+\partial_q f(x) = \frac{f(qx) - f(q^{-1}x)}{qx - q^{-1}x}. \tag{I6}<br>
 $$</p>
-<p>Def I.1 makes sense for we have $ \partial_p x^n = [n]_q x^{n-1} $ and we have the following <strong>Leibniz Rule</strong>,<br>
+<p>Def I.1 makes sense for we have $ \partial_q x^n = [n]_q x^{n-1} $ and we have the following <strong>Leibniz Rule</strong>,<br>
 $$ \tag{I7}<br>
-\partial_p fg(x) = g(qx)\partial_p f(x) + f(q^{-1}x) \partial_p g(x).<br>
+\partial_q fg(x) = g(qx)\partial_q f(x) + f(q^{-1}x) \partial_q g(x).<br>
 $$</p>
 <p><strong>Remark</strong> One might have noted that in my setup, $q$ and $q^{-1}$ can be exchanged with each other.</p>
 <p>The $q$-analogue of $(x+a)^n$ is the polynomial</p>
 <p>$$ \tag{I8}<br>
 (x+a)_q^n := \Big \{ \begin{array}{ll} 1 &amp; \text{if } n= 0, \\ (x+aq^{-n+1})(x + aq^{-n + 3}) \cdots (x + aq^{n-1}) &amp; \text{if } n\geqslant 1. \end{array}<br>
 $$</p>
-<p>Directly by $\mathrm{(I6)}$,<br>
+<p>Directly by <a href="#eqI6">$\mathrm{(I6)}$</a>, <span id="eqI9"></span><br>
 $$<br>
-\partial_p(x+a)^n_q = [n]_q(x+a)_q^{n-1}. \tag{I9}<br>
+\partial_q (x+a)^n_q = [n]_q(x+a)_q^{n-1}. \tag{I9}<br>
 $$</p>
+<p>The product formula for $(x+a)^n_q$ is twisted too,</p>
+<p>$$<br>
+( x + a )^{ m + n }_q = ( x + q^{-n} a )^m_q ( x + q^m a)^n_q, \tag{I10}<br>
+$$</p>
+<p>and in fact, we have the following binomial formula (just as you may have guessed, $(x+a)^n_q$ is the generating function of $q$-binomial coefficients),</p>
+<p>$$ \tag{I11}<br>
+(x+a)^n_q = \sum\limits_{j=0}^n \begin{bmatrix} n \\ j \end{bmatrix}_q a^{n-j} x^j.<br>
+$$</p>
+<p>One can prove this via <a href="#eqI9">$\mathrm{(I9)}$</a> or using $q$-Taylor expansion we will talk about <a href="#thmI2">later</a>. There is a crucial point about $(x+a)^n_q$, if $n$ is even,<br>
+$$<br>
+(x-a)_q^n \Big | _{x = a} \neq 0.<br>
+$$</p>
+<p>In fact, we can introduce the very famous $q$-<strong>Pochhammer symbol</strong>,</p>
+<p>$$ \tag{I12}<br>
+(a;q)_n := (1-a)(1-aq) \cdots ( 1-aq^{n-1} ).<br>
+$$</p>
+<p>$q$-Pochhammer symbol is also called $q$-shifted factorial by many people (We shall not use this name, for we already have our version of $q$-factorials.) One can easily write down the relations between our notations and $q$-Pochhammer symbol,</p>
+<p>$$ \tag{I13}<br>
+[n]_q! = \frac{ -q^{ -\frac{ n(n+1) } {2} } } { ( q^{-1} - q )^n }( q^2 ; q^2 )_n, \quad (x - a)^n_q = x^n ( \frac{a q^{ - n + 1} }{x} ; q^2 )_n.<br>
+$$</p>
+<p>Hence,</p>
+<p>$$<br>
+(x-a)_q^n \Big | _{x = a}  = a^n ( q^{ - n + 1 } ; q^2 )_n .<br>
+$$</p>
+<p><span id="thmI2"> </span><br>
+<strong>Thm I.2.</strong> For any polynomial $f(x)$ and any number $a$, we have the following $q$-<strong>Taylor expansion</strong>, <span id="eqI14"></span><br>
+$$ \tag{I14}<br>
+f(x) = f(a) + \sum\limits_{n=1}^\infty ( \partial_q^n f)(a) \frac{ (x - a)^n_q - a^n ( q^{ - n + 1} ; q^2 )_n }{ [ n ]_q ! }.<br>
+$$</p>
+<p><strong>Proof.</strong> By induction on the degree of $f$. Assume <a href="#eqI14">$\mathrm{(I14)}$</a> holds for all $f$ with $\deg f \le n$, then for $f$ with $\deg f = n$, using the fact that $(x - a)^k_q$ is with degree $k$ and monic,<br>
+$$<br>
+f(x) = \sum\limits_{k=0}^n c_k (x - a)^k_q,<br>
+$$<br>
+with $c_k \in \mathbb{C}$. By taking $\partial_q$, we have for $k \geqslant 1$<br>
+$$<br>
+c_k [k]_q = (\partial_q^k f)(a) \frac{1}{ [ k - 1 ]_q! }.<br>
+$$<br>
+In other words, for $k \geqslant 1$,<br>
+$$<br>
+c_k = (\partial_q^k f)(a) \frac{1}{ [ k ]_q! }.<br>
+$$</p>
+<p>Then the result follows by comparing the constant terms. $\blacksquare$</p>
+<h1 id="references">References</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Kac, Victor G., and Pokman Cheung, <a href="http://engime.org/pars_docs/refs/81/80745/80745.pdf" target="_blank" rel="noopener"><em>Quantum calculus</em></a>, Vol. 113. New York: Springer, 2002. <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 
         
       </div>
@@ -413,7 +464,7 @@ $$</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#i-basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">I. Basic definitions</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">Basic definitions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-number">2.</span> <span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>
