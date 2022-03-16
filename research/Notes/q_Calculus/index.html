@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="Yifan Li&#39;s Homepage">
 <meta property="og:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-03-15T15:45:57.620Z">
+<meta property="og:updated_time" content="2022-03-16T02:24:13.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quantum Calculus">
 <meta name="twitter:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
@@ -266,19 +266,40 @@
       <div class="post-body">
         
         
-          <p>This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $q$ as a generic nonzero complex number. But we are also interested in cases when $q$ is a root of $1$. </p>
-<h1 id="I-Basic-definitions"><a href="#I-Basic-definitions" class="headerlink" title="I. Basic definitions"></a>I. Basic definitions</h1><p>We begin with $q$-integers. For $ n \geqslant 0 $,</p>
-<script type="math/tex; mode=display">\tag{I1} [n]_q := \frac{ q^n - q^{ -n } }{ q - q^{ -1 } } = q^{ -n + 1 } + q^{ -n + 3 } + \cdots + q^{ n - 3 } + q^{ n - 1 }.</script><p>For simplicity, we define $[-n]_q = -[n]_q$. Then $[1]_q = 1,[0]_q = 0$. The summation formula is</p>
-<script type="math/tex; mode=display">\tag{I2} [n+m]_q = q^{m}[n]_q + q^{-n}[m]_q = q^{-m}[n]_q + q^{n}[m]_q.</script><p>Using $ \mathrm{(I2)} $, we can write down the product formula, for $m \geqslant n \geqslant 0$,</p>
-<script type="math/tex; mode=display">\begin{align} 
-[m]_q [n]_q & = [m]_q ( q^{- n + 1} + q^{ - n + 3 } + \cdots q^{n - 3} + q^{ n - 1 } ) \\\\ & = ( [m + n - 1]_q - q^m[n - 1]_q ) + ( [m + n - 3]_q - q^m [n - 3]_q ) + \cdots \\\\  & \quad + ( [m - n + 1]_q - q^{m} [1 - n]_q ) \\\\ & = [ m + n - 1 ]_q + [ m + n - 3 ]_q + \cdots [ m - n + 1 ]_q. \tag{I3}
-\end{align}</script><p>We will also define $q$-factorials and $q$-binomial coefficients as</p>
-<script type="math/tex; mode=display">[n]_q ! =  \prod \limits _{k=1} ^n [n]_q, \quad \left [ \begin{matrix} m \\\ n \end{matrix} \right ]_q := \frac{[m]_q!}{[n]_q![m-n]_q!}, \tag{I4}</script><p>where $m \geqslant n \geqslant 0$. Using $ \mathrm{(I2)} $ the recursion relation of $q$-binomial coefficients is given by</p>
-<script type="math/tex; mode=display">
-\left [ \begin{matrix} m+1 \\\ n+1 \end{matrix} \right ]_p = q^{ (n-m) } \left [ \begin{matrix} m \\\ n \end{matrix} \right ]_p + q^{ (n+1) } \left [ \begin{matrix} m \\\ n+1 \end{matrix} \right ]_p. \tag{I5}</script><p>That is all for $q$-numbers. We will then work with functions, i.e., $q$-polynomials or $q$-series, which are usually generating functions of sequences of $q$-numbers. We will also consider $q$-analogue of differential operators, which are usually difference operators.</p>
-<p><strong>Def I.1.</strong> Given any function $ f(x) $ of one variable $ x $, its $q$-differential is</p>
-<script type="math/tex; mode=display">
-\partial_p f(x) = \frac{f(qx) - f(q^{-1}x)}{qx - q^{-1}x}. \tag{I6}</script><p>Def I.1 makes sense for we have $ \partial_p x^n = [n]_q x^{n-1} $.</p>
+          <p>This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $q$ as a generic nonzero complex number. But we are also interested in cases when $q$ is a root of $1$.</p>
+<h1 id="i-basic-definitions">I. Basic definitions</h1>
+<p>We begin with $q$-integers. For $ n \geqslant 0 $,</p>
+<p>$$ \tag{I1} [n]_q := \frac{ q^n - q^{ -n } }{ q - q^{ -1 } } = q^{ -n + 1 } + q^{ -n + 3 } + \cdots + q^{ n - 3 } + q^{ n - 1 }. $$</p>
+<p>For simplicity, we define $[-n]_q = -[n]_q$. Then $[1]_q = 1,[0]_q = 0$. The summation formula is</p>
+<p>$$ \tag{I2} [n+m]_q = q^{m}[n]_q + q^{-n}[m]_q = q^{-m}[n]_q + q^{n}[m]_q. $$</p>
+<p>Using $ \mathrm{(I2)} $, we can write down the product formula, for $m \geqslant n \geqslant 0$,</p>
+<p>$$ \begin{align}<br>
+[m]_q [n]_q &amp; = [m]_q ( q^{- n + 1} + q^{ - n + 3 } + \cdots q^{n - 3} + q^{ n - 1 } ) \\ &amp; = ( [m + n - 1]_q - q^m[n - 1]_q ) + ( [m + n - 3]_q - q^m [n - 3]_q ) + \cdots \\  &amp; \quad + ( [m - n + 1]_q - q^{m} [1 - n]_q ) \\ &amp; = [ m + n - 1 ]_q + [ m + n - 3 ]_q + \cdots [ m - n + 1 ]_q. \tag{I3}<br>
+\end{align}  $$</p>
+<p>We will also define $q$-factorials and $q$-binomial coefficients as</p>
+<p>$$ [n]_q ! =  \prod \limits _{k=1} ^n [n]_q, \quad \left [ \begin{matrix} m \\ n \end{matrix} \right ]_q := \frac{[m]_q!}{[n]_q![m-n]_q!}, \tag{I4} $$</p>
+<p>where $m \geqslant n \geqslant 0$. Using $ \mathrm{(I2)} $ the recursion relation of $q$-binomial coefficients is given by</p>
+<p>$$<br>
+\left [ \begin{matrix} m+1 \\ n+1 \end{matrix} \right ]_p = q^{ (n-m) } \left [ \begin{matrix} m \\ n \end{matrix} \right ]_p + q^{ (n+1) } \left [ \begin{matrix} m \\ n+1 \end{matrix} \right ]_p. \tag{I5}<br>
+$$</p>
+<p>That is all for $q$-numbers. We will then work with functions, i.e., $q$-polynomials or $q$-series, which are usually generating functions of sequences of $q$-numbers. We will also consider $q$-analogue of differential operators, which are usually difference operators.</p>
+<p><strong>Def I.1.</strong> Given any function $ f(x) $ of one variable $ x $, its $q$-differential is<br>
+$$<br>
+\partial_p f(x) = \frac{f(qx) - f(q^{-1}x)}{qx - q^{-1}x}. \tag{I6}<br>
+$$</p>
+<p>Def I.1 makes sense for we have $ \partial_p x^n = [n]_q x^{n-1} $ and we have the following <strong>Leibniz Rule</strong>,<br>
+$$ \tag{I7}<br>
+\partial_p fg(x) = g(qx)\partial_p f(x) + f(q^{-1}x) \partial_p g(x).<br>
+$$</p>
+<p><strong>Remark</strong> One might have noted that in my setup, $q$ and $q^{-1}$ can be exchanged with each other.</p>
+<p>The $q$-analogue of $(x+a)^n$ is the polynomial</p>
+<p>$$ \tag{I8}<br>
+(x+a)_q^n := \Big \{ \begin{array}{ll} 1 &amp; \text{if } n= 0, \\ (x+aq^{-n+1})(x + aq^{-n + 3}) \cdots (x + aq^{n-1}) &amp; \text{if } n\geqslant 1. \end{array}<br>
+$$</p>
+<p>Directly by $\mathrm{(I6)}$,<br>
+$$<br>
+\partial_p(x+a)^n_q = [n]_q(x+a)_q^{n-1}. \tag{I9}<br>
+$$</p>
 
         
       </div>
@@ -392,7 +413,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#I-Basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">I. Basic definitions</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#i-basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">I. Basic definitions</span></a></li></ol></div>
             
 
           </div>
