@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="Yifan Li&#39;s Homepage">
 <meta property="og:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-03-16T10:04:24.218Z">
+<meta property="og:updated_time" content="2022-03-17T08:45:14.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quantum Calculus">
 <meta name="twitter:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
@@ -269,6 +269,7 @@
           <p>This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $q$ as a generic nonzero complex number. But we are also interested in cases when $q$ is a root of $1$.</p>
 <h1 id="basic-definitions">Basic definitions</h1>
 <hr>
+<h2 id="q-numbers">q-numbers</h2>
 <p>We begin with $q$-integers. For $ n \geqslant 0 $,</p>
 <p>$$ \tag{I1} [n]_q := \frac{ q^n - q^{ -n } }{ q - q^{ -1 } } = q^{ -n + 1 } + q^{ -n + 3 } + \cdots + q^{ n - 3 } + q^{ n - 1 }. $$</p>
 <p>For simplicity, we define $[-n]_q = -[n]_q$. Then $[1]_q = 1,[0]_q = 0$. The summation formula is <span id="eqI2"></span></p>
@@ -277,13 +278,15 @@
 <p>$$ \begin{align}<br>
 [m]_q [n]_q &amp; = [m]_q ( q^{- n + 1} + q^{ - n + 3 } + \cdots q^{n - 3} + q^{ n - 1 } ) \\ &amp; = ( [m + n - 1]_q - q^m[n - 1]_q ) + ( [m + n - 3]_q - q^m [n - 3]_q ) + \cdots \\  &amp; \quad + ( [m - n + 1]_q - q^{m} [1 - n]_q ) \\ &amp; = [ m + n - 1 ]_q + [ m + n - 3 ]_q + \cdots [ m - n + 1 ]_q. \tag{I3}<br>
 \end{align}  $$</p>
-<p>We will also define $q$-factorials and $q$-binomial coefficients as</p>
+<p>We will also define $q$-factorials and $q$-binomial coefficients as <span id="eqI4"> </span></p>
 <p>$$ [n]_q ! =  \prod \limits _{k=1} ^n [n]_q, \quad \left [ \begin{matrix} m \\ n \end{matrix} \right ]_q := \frac{[m]_q!}{[n]_q![m-n]_q!}, \tag{I4} $$</p>
-<p>where $m \geqslant n \geqslant 0$. Using <a href="#eqI2">$ \mathrm{(I2)} $</a> the recursion relation of $q$-binomial coefficients is given by</p>
+<p>where $m \geqslant n \geqslant 0$. Using <a href="#eqI2">$ \mathrm{(I2)} $</a> the recursion relation of $q$-binomial coefficients is given by<br>
+<span id="eqI5"></span></p>
 <p>$$<br>
 \left [ \begin{matrix} m+1 \\ n+1 \end{matrix} \right ]_q = q^{ (n-m) } \left [ \begin{matrix} m \\ n \end{matrix} \right ]_q + q^{ (n+1) } \left [ \begin{matrix} m \\ n+1 \end{matrix} \right ]_q. \tag{I5}<br>
 $$</p>
 <p>That is all for $q$-numbers. We will then work with functions<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, i.e., $q$-polynomials or $q$-series, which are usually generating functions of sequences of $q$-numbers. We will also consider $q$-analogue of differential operators, which are usually difference operators.</p>
+<h2 id="q-polynomials">q-polynomials</h2>
 <p><strong>Def I.1.</strong> Given any function $ f(x) $ of one variable $ x $, its $q$-differential is <span id="eqI6"></span><br>
 $$<br>
 \partial_q f(x) = \frac{f(qx) - f(q^{-1}x)}{qx - q^{-1}x}. \tag{I6}<br>
@@ -301,11 +304,12 @@ $$</p>
 $$<br>
 \partial_q (x+a)^n_q = [n]_q(x+a)_q^{n-1}. \tag{I9}<br>
 $$</p>
-<p>The product formula for $(x+a)^n_q$ is twisted too,</p>
+<p>The product formula for $(x+a)^n_q$ is twisted too,<br>
+<span id="eqI10"> </span></p>
 <p>$$<br>
 ( x + a )^{ m + n }_q = ( x + q^{-n} a )^m_q ( x + q^m a)^n_q, \tag{I10}<br>
 $$</p>
-<p>and in fact, we have the following binomial formula (just as you may have guessed, $(x+a)^n_q$ is the generating function of $q$-binomial coefficients),</p>
+<p>and in fact, we have the following binomial formula (just as you may have guessed, $(x+a)^n_q$ is the generating function of $q$-binomial coefficients), <span id="eqI11"></span></p>
 <p>$$ \tag{I11}<br>
 (x+a)^n_q = \sum\limits_{j=0}^n \begin{bmatrix} n \\ j \end{bmatrix}_q a^{n-j} x^j.<br>
 $$</p>
@@ -317,7 +321,7 @@ $$</p>
 <p>$$ \tag{I12}<br>
 (a;q)_n := (1-a)(1-aq) \cdots ( 1-aq^{n-1} ).<br>
 $$</p>
-<p>$q$-Pochhammer symbol is also called $q$-shifted factorial by many people (We shall not use this name, for we already have our version of $q$-factorials.) One can easily write down the relations between our notations and $q$-Pochhammer symbol,</p>
+<p>$q$-Pochhammer symbol is also called $q$-shifted factorial by many people (We shall not use this name, for we already have our version of $q$-factorials.) One can easily write down the relations between our notations and $q$-Pochhammer symbol, <span id="eqI13"> </span></p>
 <p>$$ \tag{I13}<br>
 [n]_q! = \frac{ -q^{ -\frac{ n(n+1) } {2} } } { ( q^{-1} - q )^n }( q^2 ; q^2 )_n, \quad (x - a)^n_q = x^n ( \frac{a q^{ - n + 1} }{x} ; q^2 )_n.<br>
 $$</p>
@@ -325,8 +329,9 @@ $$</p>
 <p>$$<br>
 (x-a)_q^n \Big | _{x = a}  = a^n ( q^{ - n + 1 } ; q^2 )_n .<br>
 $$</p>
-<p><span id="thmI2"> </span><br>
-<strong>Thm I.2.</strong> For any polynomial $f(x)$ and any number $a$, we have the following $q$-<strong>Taylor expansion</strong>, <span id="eqI14"></span><br>
+<h2 id="q-taylor-expansions">q-Taylor expansions</h2>
+<p><span id="thmI2"> </span></p>
+<p><strong>Thm I.2.</strong> For any polynomial $f(x)$ and any number $a$, we have the following $q$-<strong>Taylor expansion</strong>, <span id="eqI14"></span><br>
 $$ \tag{I14}<br>
 f(x) = f(a) + \sum\limits_{n=1}^\infty ( \partial_q^n f)(a) \frac{ (x - a)^n_q - a^n ( q^{ - n + 1} ; q^2 )_n }{ [ n ]_q ! }.<br>
 $$</p>
@@ -343,6 +348,57 @@ $$<br>
 c_k = (\partial_q^k f)(a) \frac{1}{ [ k ]_q! }.<br>
 $$</p>
 <p>Then the result follows by comparing the constant terms. $\blacksquare$</p>
+<p>With $q$-<a href="#thmI2">Taylor expansion</a>, we can write down many $q$-polynomials as generation functions of $q$-numbers, which will give us much information about $q$-numbers. For example, using <a href="#eqI11">$\mathrm{(I11)}$</a>, we can prove many properties of $q$-binomial coefficients directly, including <a href="#eqI5">$\mathrm{(I5)}$</a>. But before that, one should notice that we can extend the definitions of $q$-binomial coefficients to negative numbers, and also their generating functions. This is the first glance into the world of $q$-series. To include negative integers, we define <span id="eqI15"> </span><br>
+$$ \tag{I15}<br>
+\begin{bmatrix} m \\ n \end{bmatrix}_q := \frac{ [m]_q \cdots [m-n+1]_q }{ [n]_q! }.<br>
+$$<br>
+This definition is equivalent with <a href="#eqI4">$\mathrm{(I4)}$</a> when $m \geqslant n \geqslant 0$, but also works when $m &lt; n$. In these cases for negative powers, by extend our notations, we can write down their generating series as <span id="eqI16"> </span><br>
+$$ \tag{I16}<br>
+(x + a)^{ -m }_q := \sum \limits _{ n = 0 }^\infty \begin{bmatrix} -m \\ n \end{bmatrix}_q a^{ -n-m } x^n.<br>
+$$</p>
+<p>This definition is meaningful because we can also extend <a href="#eqI9">$\mathrm{(I9)}$</a> and <a href="#eqI10">$\mathrm{(I10)}$</a>. For $m &gt; 0$,<br>
+<span id="eqI17"> </span><br>
+$$ \tag{I17}<br>
+\partial_q ( x + a )^{ -m }_q = \sum \limits _{ n = 1 }^\infty \begin{bmatrix} -m \\ n \end{bmatrix}_q [n]_q a^{ - n - m }x^ {n-1} = [ -m ]_q (x + a)_q^{ - m - 1 }.<br>
+$$</p>
+<p>Notice that <a href="#eqI5">$\mathrm{(I5)}$</a> holds for any $m$. We can show that for $ m &gt; 0 $,<br>
+$$<br>
+\begin{align*}<br>
+&amp; (x + q^m a)^1 _q (x + q a) ^{ -m } _q = (x + a)^{ - m + 1} _q. \\ &amp; (x + q^m a)^{-1} _q (x + q^{-1} a) ^{ -m } _q = (x + a)^{ - m - 1} _q. \end{align*}<br>
+$$</p>
+<p>The second identity holds via a summation trick, $\forall n \geqslant 0$,<br>
+$$<br>
+\begin{align*}<br>
+&amp; \sum\limits _{ k = 0 } ^n (-1)^{ n-k } \begin{bmatrix} -m \\ k \end{bmatrix}_q q^{ - m n + m k + k } \\<br>
+= &amp; (-1)^n \left ( \begin{bmatrix} -m \\ 0 \end{bmatrix}_q q^{ -mn } - \begin{bmatrix} -m \\ 1 \end{bmatrix}_q q^{ -mn + m + 1 } + \cdots + (-1)^n \begin{bmatrix} -m \\ n \end{bmatrix}_q q^{ n} \right ) \\<br>
+= &amp; (-1)^n \left ( \begin{bmatrix} -m - 1 \\ 0 \end{bmatrix}_q q^{ -mn } - \begin{bmatrix} -m \\ 1 \end{bmatrix}_q q^{ -mn + m + 1 } + \cdots + (-1)^n \begin{bmatrix} -m \\ n \end{bmatrix}_q q^{ n } \right ) \\<br>
+= &amp; (-1)^n \left ( -\begin{bmatrix} -m - 1 \\ 1 \end{bmatrix}_q q^{ -mn + m } + \begin{bmatrix} -m \\ 2 \end{bmatrix}_q q^{ -mn + 2m + 2 } + \cdots + (-1)^n \begin{bmatrix} -m \\ n \end{bmatrix}_q q^{ n } \right ) \\<br>
+= &amp; (-1)^n \left ( (-1)^{ n-1 } \begin{bmatrix} -m -1 \\ n-1 \end{bmatrix}_q q^{ -m } + (-1)^n \begin{bmatrix} -m \\ n \end{bmatrix}_q q^{ n } \right ) \\<br>
+= &amp; \begin{bmatrix} - m - 1 \\ n \end{bmatrix}_q.<br>
+\end{align*}<br>
+$$</p>
+<p>To prove the generalized version of <a href="#eqI10">$\mathrm{(I10)}$</a>, we just need to use induction,<br>
+$$<br>
+\begin{align*}<br>
+(x + q^m a)^{ n+1 } _q (x + q^{n+1} a) ^{ -m } _q  &amp; =(x + q^{m-1} a)^{ n } _q ( x + q^{ m + n } a)^1_q (x + q^{n+1} a) ^{ -m } _q  \\ &amp;= (x + q^{m-1} a)^n (x + q^n a)^{ - m + 1} _q. \\  (x + q^m a)^{-n - 1} _q (x + q^{-n - 1} a) ^{ -m } _q &amp;= (x + q^{m + 1} a )^{ -n } _q (x + q^{m - n} a)^{ - 1 } _q ( x + q^{ -n - 1 } a)^{-m} _q \\<br>
+&amp; = (x + q^{m + 1} a )^{ -n } _q ( x + q^{ - n } a )_q^{-m-1}.<br>
+\end{align*}<br>
+$$</p>
+<p>One can see <a href="#eqI10">$\mathrm{(I10)}$</a> holds regardless $ m , n $ are positive or not.</p>
+<p>Using <a href="#eqI10">$\mathrm{(I10)}$</a>, we can show the following properties, which takes <a href="#eqI5">$\mathrm{(I5)}$</a> as a special case.</p>
+<p><span id="propI3"> </span></p>
+<p><strong>Prop I.3.</strong> The following identities hold for $n \geqslant 0$, <span id="eqI18"> </span><br>
+$$ \tag{I18}<br>
+\begin{bmatrix} m_1 + m_2 \\ n \end{bmatrix}_q = \sum \limits _ {k=0} ^ n q^{ m_2n - (m_1 + m_2)k } \begin{bmatrix} m_1 \\ k \end{bmatrix}_q \begin{bmatrix} m_2 \\ n-k \end{bmatrix}_q.<br>
+$$</p>
+<p>Many identities can be shown in this way. Since we have defined the $q$-Pochhammer symbols and related it to our $q$-factorials as <a href="#eqI13">$\mathrm{(I13)}$</a>, it is a good exercise to prove identities about them.</p>
+<p><span id="coroI4"> </span><br>
+<strong>Coro I.4.</strong> The $q$-Pochhammer symbols satisfy the following identities,</p>
+<ul>
+<li>$ (x;q^2)_n = \sum \limits _{ k = 0 } ^n \begin{bmatrix} n \\ k \end{bmatrix}_q ( - q^{n-1 } x)^k$,</li>
+<li>$ (- q;q^2)_n = \sum \limits _{ k = 0 } ^n \begin{bmatrix} n \\ k \end{bmatrix}_q  q^{nk} $,</li>
+<li>$ \frac{ 1 } { ( x ;q^2)_n } = \sum \limits _{ k \geqslant 0 } \begin{bmatrix} n + k - 1 \\ k \end{bmatrix}_q (  q^{n-1 } x)^k $,</li>
+</ul>
 <h1 id="references">References</h1>
 <hr class="footnotes-sep">
 <section class="footnotes">
@@ -464,7 +520,7 @@ $$</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">Basic definitions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-number">2.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">Basic definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#q-numbers"><span class="nav-number">1.1.</span> <span class="nav-text">q-numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-polynomials"><span class="nav-number">1.2.</span> <span class="nav-text">q-polynomials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-taylor-expansions"><span class="nav-number">1.3.</span> <span class="nav-text">q-Taylor expansions</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-number">2.</span> <span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>
