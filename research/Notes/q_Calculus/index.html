@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="Yifan Li&#39;s Homepage">
 <meta property="og:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-03-18T02:30:03.826Z">
+<meta property="og:updated_time" content="2022-03-18T14:27:20.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quantum Calculus">
 <meta name="twitter:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
@@ -282,9 +282,9 @@
 \partial_q f(x) = \frac{f(qx) - f(q^{-1}x)}{qx - q^{-1}x}. \tag{I6}</script><p>Def I.1 makes sense for we have $ \partial_q x^n = [n]_q x^{n-1} $ and we have the following <strong>Leibniz Rule</strong>,</p>
 <script type="math/tex; mode=display">\tag{I7}
 \partial_q fg(x) = g(qx)\partial_q f(x) + f(q^{-1}x) \partial_q g(x).</script><p><strong>Remark</strong> One might have noted that in my setup, $q$ and $q^{-1}$ can be exchanged with each other. </p>
-<p>The $q$-analogue of $(x+a)^n$ is the polynomial</p>
+<p>The $q$-analogue of $(x+a)^n$ (for $n &gt; 0$) is the polynomial </p>
 <script type="math/tex; mode=display">\tag{I8} 
-(x+a)_q^n := \Bigg \{ \begin{array}{ll} 1 & \text{if } n= 0, \\\\ (x+aq^{-n+1})(x + aq^{-n + 3}) \cdots (x + aq^{n-1}) & \text{if } n\geqslant 1. \end{array}</script><p>Directly by <a href="#eqI6">$\mathrm{(I6)}$</a>, <span id="eqI9"></span></p>
+(x+a)_q^n :=   (x+aq^{-n+1})(x + aq^{-n + 3}) \cdots (x + aq^{n-1}),</script><p>and $(x+ a)^0_q = 1$. Directly by <a href="#eqI6">$\mathrm{(I6)}$</a>, <span id="eqI9"></span></p>
 <script type="math/tex; mode=display">
 \partial_q (x+a)^n_q = [n]_q(x+a)_q^{n-1}. \tag{I9}</script><p>The product formula for $(x+a)^n_q$ is twisted too,<br><span id="eqI10"> </span>  </p>
 <script type="math/tex; mode=display">
@@ -347,15 +347,21 @@ c_k = (\partial_q^k f)(a) \frac{1}{ [ k ]_q! }.</script><p>Then the result follo
 <script type="math/tex; mode=display">\tag{I19}
 (x;q)_\infty := \prod \limits _{n = 0} ^ \infty (1 - q^n x).</script><p>The above definition makes sense because for $|q| &lt; 1 $, <a href="#eqI19">$\mathrm{(I19)}$</a> defines an analytic function. Such a construction indicates that we need to study some limiting behavior of $q$-numbers and $q$-polynomials. For $|q| &lt; 1$,</p>
 <script type="math/tex; mode=display">
-\begin{align*}
+\begin{align}
 \lim \limits_{n \to +\infty } q^n [ n ]_q  = - \frac { 1 } { q - q^{-1} },
-\end{align*}</script><p>and using this, we have <span id="eqI20"> </span></p>
+\end{align}</script><p>and using this, we have <span id="eqI20"> </span></p>
 <script type="math/tex; mode=display">\tag{I20}
 \lim \limits_{n \to + \infty } q^{ n k - k^2 } \begin{bmatrix} n \\\\ k \end{bmatrix}_q = \frac { 1 }{ \prod \limits _{ j = 1 } ^k ( 1 - q^{ 2j } ) } = \frac { 1 }{ ( q^2; q^2)_k }.</script><p>Combine <a href="#eqI20">$\mathrm{(I20)}$</a> with the $q$-series expansion of finite $q$-Pochhammer symbols, we have<br><span id="eqI21"> </span></p>
 <script type="math/tex; mode=display">\tag{I21}
-(x;q)_{\infty} = \sum \limits_{k \geqslant 0} \frac{ (-q^{\frac{k-1}{2}} x ) ^k }{ (q;q)_k },</script><p>and <span id="eqI22"> </span></p>
+(x;q) _{\infty} = \sum \limits _{k \geqslant 0} \frac{ (-q^{\frac{k-1}{2}} x ) ^k }{ (q;q)_k },</script><p>and <span id="eqI22"> </span></p>
 <script type="math/tex; mode=display">\tag{I22}
-\frac{ 1 }{ (x;q)_{\infty} } = \sum_{k \geqslant 0} \frac{ x^k }{ (q;q)_k } .</script><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><blockquote id="fn_kac">
+\frac{ 1 }{ (x;q) _{\infty} } = \sum _{k \geqslant 0} \frac{ x^k }{ (q;q)_k } .</script><p><a href="#eqI21">$\mathrm{ (I21) }$</a> and <a href="#eqI22">$\mathrm{ (I22) }$</a> are the very famous <strong>Euler identities</strong>. From <a href="#eqI13">$\mathrm{ (I13) }$</a>, we can write</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} m \\\\ n \end{bmatrix} _{q}  = q^{ n^{2} - mn} \frac{ (q^{ 2m-2n + 2}; q^2 ) _n }{ (q^2 ; q^2)_n }.</script><p>Using this relation and <a href="#coroI4">Coro $\mathrm{I.4}$</a>,<br><span id="coroI5"> </span></p>
+<p><strong>Coro I.5.</strong> The $q$-<strong>binomial theorem</strong> for $q$-Pochhammer symbols holds,</p>
+<script type="math/tex; mode=display">\tag{I23}
+\frac{ (ax;q) _\infty }{ (q;q) _\infty } = \sum _{n\geqslant 0 } \frac{(a ;q) _n}{ (q;q) _n} x^n.</script><h1 id="q-serise"><a href="#q-serise" class="headerlink" title="q-serise"></a>q-serise</h1><p>We have seen many different $q$-series from $q$-taylor expansions or taking limits. However, to include $q$-series is not just for curiosity. It appears almost everywhere like  difference equations, modular forms, quantum groups and quantum invariants.  </p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><blockquote id="fn_kac">
 <sup>kac</sup>. Kac, Victor G., and Pokman Cheung, <a href="http://engime.org/pars_docs/refs/81/80745/80745.pdf" target="_blank" rel="noopener"><em>Quantum calculus</em></a>, Vol. 113. New York: Springer, 2002.<a href="#reffn_kac" title="Jump back to footnote [kac] in the text."> &#8617;</a>
 </blockquote>
 
@@ -471,7 +477,7 @@ c_k = (\partial_q^k f)(a) \frac{1}{ [ k ]_q! }.</script><p>Then the result follo
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">Basic definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#q-numbers"><span class="nav-number">1.1.</span> <span class="nav-text">q-numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-polynomials"><span class="nav-number">1.2.</span> <span class="nav-text">q-polynomials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-Taylor-expansions"><span class="nav-number">1.3.</span> <span class="nav-text">q-Taylor expansions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-series-examples"><span class="nav-number">1.4.</span> <span class="nav-text">q-series: examples</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">2.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">Basic definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#q-numbers"><span class="nav-number">1.1.</span> <span class="nav-text">q-numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-polynomials"><span class="nav-number">1.2.</span> <span class="nav-text">q-polynomials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-Taylor-expansions"><span class="nav-number">1.3.</span> <span class="nav-text">q-Taylor expansions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-series-examples"><span class="nav-number">1.4.</span> <span class="nav-text">q-series: examples</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#q-serise"><span class="nav-number">2.</span> <span class="nav-text">q-serise</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>
