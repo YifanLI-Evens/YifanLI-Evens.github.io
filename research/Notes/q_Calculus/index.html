@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="Yifan Li&#39;s Homepage">
 <meta property="og:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-03-18T14:27:20.960Z">
+<meta property="og:updated_time" content="2022-03-21T02:18:32.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quantum Calculus">
 <meta name="twitter:description" content="This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $">
@@ -266,104 +266,184 @@
       <div class="post-body">
         
         
-          <p>This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $q$ as a generic nonzero complex number. But we are also interested in cases when $q$ is a root of $1$. </p>
-<h1 id="Basic-definitions"><a href="#Basic-definitions" class="headerlink" title="Basic definitions"></a>Basic definitions</h1><hr>
-<h2 id="q-numbers"><a href="#q-numbers" class="headerlink" title="q-numbers"></a>q-numbers</h2><p>We begin with $q$-integers. For $ n \geqslant 0 $,</p>
-<script type="math/tex; mode=display">\tag{I1} [n]_q := \frac{ q^n - q^{ -n } }{ q - q^{ -1 } } = q^{ -n + 1 } + q^{ -n + 3 } + \cdots + q^{ n - 3 } + q^{ n - 1 }.</script><p>For simplicity, we define $[-n]_q = -[n]_q$. Then $[1]_q = 1,[0]_q = 0$. The summation formula is <span id="eqI2"></span></p>
-<script type="math/tex; mode=display">\tag{I2} [n+m]_q = q^{m}[n]_q + q^{-n}[m]_q = q^{-m}[n]_q + q^{n}[m]_q.</script><p>Using <a href="#eqI2">$ \mathrm{(I2)} $</a>, we can write down the product formula, for $m \geqslant n \geqslant 0$,</p>
-<script type="math/tex; mode=display">\begin{align} 
-[m]_q [n]_q & = [m]_q ( q^{- n + 1} + q^{ - n + 3 } + \cdots q^{n - 3} + q^{ n - 1 } ) \\\\ & = ( [m + n - 1]_q - q^m[n - 1]_q ) + ( [m + n - 3]_q - q^m [n - 3]_q ) + \cdots \\\\  & \quad + ( [m - n + 1]_q - q^{m} [1 - n]_q ) \\\\ & = [ m + n - 1 ]_q + [ m + n - 3 ]_q + \cdots [ m - n + 1 ]_q. \tag{I3}
-\end{align}</script><p>We will also define $q$-factorials and $q$-binomial coefficients as <span id="eqI4"> </span></p>
-<script type="math/tex; mode=display">[n]_q ! =  \prod \limits _{k=1} ^n [n]_q, \quad \left [ \begin{matrix} m \\\ n \end{matrix} \right ]_q := \frac{[m]_q!}{[n]_q![m-n]_q!}, \tag{I4}</script><p>where $m \geqslant n \geqslant 0$. Using <a href="#eqI2">$ \mathrm{(I2)} $</a> the recursion relation of $q$-binomial coefficients is given by<br><span id="eqI5"></span></p>
-<script type="math/tex; mode=display">
-\left [ \begin{matrix} m+1 \\\ n+1 \end{matrix} \right ]_q = q^{ (n-m) } \left [ \begin{matrix} m \\\ n \end{matrix} \right ]_q + q^{ (n+1) } \left [ \begin{matrix} m \\\ n+1 \end{matrix} \right ]_q. \tag{I5}</script><p>That is all for $q$-numbers. We will then work with functions<sup><a href="#fn_kac" id="reffn_kac">kac</a></sup>, i.e., $q$-polynomials or $q$-series, which are usually generating functions of sequences of $q$-numbers. We will also consider $q$-analogue of differential operators, which are usually difference operators.</p>
-<h2 id="q-polynomials"><a href="#q-polynomials" class="headerlink" title="q-polynomials"></a>q-polynomials</h2><p><strong>Def I.1.</strong> Given any function $ f(x) $ of one variable $ x $, its $q$-differential is <span id="eqI6"></span></p>
-<script type="math/tex; mode=display">
-\partial_q f(x) = \frac{f(qx) - f(q^{-1}x)}{qx - q^{-1}x}. \tag{I6}</script><p>Def I.1 makes sense for we have $ \partial_q x^n = [n]_q x^{n-1} $ and we have the following <strong>Leibniz Rule</strong>,</p>
-<script type="math/tex; mode=display">\tag{I7}
-\partial_q fg(x) = g(qx)\partial_q f(x) + f(q^{-1}x) \partial_q g(x).</script><p><strong>Remark</strong> One might have noted that in my setup, $q$ and $q^{-1}$ can be exchanged with each other. </p>
-<p>The $q$-analogue of $(x+a)^n$ (for $n &gt; 0$) is the polynomial </p>
-<script type="math/tex; mode=display">\tag{I8} 
-(x+a)_q^n :=   (x+aq^{-n+1})(x + aq^{-n + 3}) \cdots (x + aq^{n-1}),</script><p>and $(x+ a)^0_q = 1$. Directly by <a href="#eqI6">$\mathrm{(I6)}$</a>, <span id="eqI9"></span></p>
-<script type="math/tex; mode=display">
-\partial_q (x+a)^n_q = [n]_q(x+a)_q^{n-1}. \tag{I9}</script><p>The product formula for $(x+a)^n_q$ is twisted too,<br><span id="eqI10"> </span>  </p>
-<script type="math/tex; mode=display">
-( x + a )^{ m + n }_q = ( x + q^{-n} a )^m_q ( x + q^m a)^n_q, \tag{I10}</script><p>and in fact, we have the following binomial formula (just as you may have guessed, $(x+a)^n_q$ is the generating function of $q$-binomial coefficients), <span id="eqI11"></span></p>
-<script type="math/tex; mode=display">\tag{I11}
-(x+a)^n_q = \sum\limits_{j=0}^n \begin{bmatrix} n \\\ j \end{bmatrix}_q a^{n-j} x^j.</script><p>One can prove this via <a href="#eqI9">$\mathrm{(I9)}$</a> or using $q$-Taylor expansion we will talk about <a href="#thmI2">later</a>. There is a crucial point about $(x+a)^n_q$, if $n$ is even,</p>
-<script type="math/tex; mode=display">
-(x-a)_q^n \Big | _{x = a} \neq 0.</script><p>In fact, we can introduce the very famous $q$-<strong>Pochhammer symbol</strong>,</p>
-<script type="math/tex; mode=display">\tag{I12}
-(a;q)_n := (1-a)(1-aq) \cdots ( 1-aq^{n-1} ).</script><p>$q$-Pochhammer symbol is also called $q$-shifted factorial by many people (We shall not use this name, for we already have our version of $q$-factorials.) One can easily write down the relations between our notations and $q$-Pochhammer symbol, <span id="eqI13"> </span></p>
-<script type="math/tex; mode=display">\tag{I13}
-[n]_q! = \frac{ -q^{ -\frac{ n(n+1) } {2} } } { ( q^{-1} - q )^n }( q^2 ; q^2 )_n, \quad (x - a)^n_q = x^n ( \frac{a q^{ - n + 1} }{x} ; q^2 )_n.</script><p>Hence, </p>
-<script type="math/tex; mode=display">
-(x-a)_q^n \Big | _{x = a}  = a^n ( q^{ - n + 1 } ; q^2 )_n .</script><h2 id="q-Taylor-expansions"><a href="#q-Taylor-expansions" class="headerlink" title="q-Taylor expansions"></a>q-Taylor expansions</h2><p><span id="thmI2"> </span></p>
-<p><strong>Thm I.2.</strong> For any polynomial $f(x)$ and any number $a$, we have the following $q$-<strong>Taylor expansion</strong>, <span id="eqI14"></span></p>
-<script type="math/tex; mode=display">\tag{I14}
-f(x) = f(a) + \sum\limits_{n=1}^\infty ( \partial_q^n f)(a) \frac{ (x - a)^n_q - a^n ( q^{ - n + 1} ; q^2 )_n }{ [ n ]_q ! }.</script><p><strong>Proof.</strong> By induction on the degree of $f$. Assume <a href="#eqI14">$\mathrm{(I14)}$</a> holds for all $f$ with $\deg f \le n$, then for $f$ with $\deg f = n$, using the fact that $(x - a)^k_q$ is with degree $k$ and monic,</p>
-<script type="math/tex; mode=display">
-f(x) = \sum\limits_{k=0}^n c_k (x - a)^k_q,</script><p>with $c_k \in \mathbb{C}$. By taking $\partial_q$, we have for $k \geqslant 1$</p>
-<script type="math/tex; mode=display">
-c_k [k]_q = (\partial_q^k f)(a) \frac{1}{ [ k - 1 ]_q! }.</script><p>In other words, for $k \geqslant 1$,</p>
-<script type="math/tex; mode=display">
-c_k = (\partial_q^k f)(a) \frac{1}{ [ k ]_q! }.</script><p>Then the result follows by comparing the constant terms. $\blacksquare$</p>
-<p>With $q$-<a href="#thmI2">Taylor expansion</a>, we can write down many $q$-polynomials as generation functions of $q$-numbers, which will give us much information about $q$-numbers. For example, using <a href="#eqI11">$\mathrm{(I11)}$</a>, we can prove many properties of $q$-binomial coefficients directly, including <a href="#eqI5">$\mathrm{(I5)}$</a>. But before that, one should notice that we can extend the definitions of $q$-binomial coefficients to negative numbers, and also their generating functions. This is the first glance into the world of $q$-series. To include negative integers, we define <span id="eqI15"> </span></p>
-<script type="math/tex; mode=display">\tag{I15}
-\begin{bmatrix} m \\\\ n \end{bmatrix}_q := \frac{ [m]_q \cdots [m-n+1]_q }{ [n]_q! }.</script><p>This definition is equivalent with <a href="#eqI4">$\mathrm{(I4)}$</a> when $m \geqslant n \geqslant 0$, but also works when $m &lt; n$. In these cases for negative powers, by extend our notations, we can write down their generating series as <span id="eqI16"> </span>  </p>
-<script type="math/tex; mode=display">\tag{I16}
-(x + a)^{ -m }_q := \sum \limits _{ n = 0 }^\infty \begin{bmatrix} -m \\\\ n \end{bmatrix}_q a^{ -n-m } x^n.</script><p>This definition is meaningful because we can also extend <a href="#eqI9">$\mathrm{(I9)}$</a> and <a href="#eqI10">$\mathrm{(I10)}$</a>. For $m &gt; 0$,<br><span id="eqI17"> </span>  </p>
-<script type="math/tex; mode=display">\tag{I17}
-\partial_q ( x + a )^{ -m }_q = \sum \limits _{ n = 1 }^\infty \begin{bmatrix} -m \\\\ n \end{bmatrix}_q [n]_q a^{ - n - m }x^ {n-1} = [ -m ]_q (x + a)_q^{ - m - 1 }.</script><p>Notice that <a href="#eqI5">$\mathrm{(I5)}$</a> holds for any $m$. We can show that for $ m &gt; 0 $,</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-& (x + q^m a)^1 _q (x + q a) ^{ -m } _q = (x + a)^{ - m + 1} _q. \\\\ & (x + q^m a)^{-1} _q (x + q^{-1} a) ^{ -m } _q = (x + a)^{ - m - 1} _q. \end{align*}</script><p>The second identity holds via a summation trick, $\forall n \geqslant 0$,</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-& \sum\limits _{ k = 0 } ^n (-1)^{ n-k } \begin{bmatrix} -m \\\\ k \end{bmatrix}_q q^{ - m n + m k + k } \\\\
-= & (-1)^n \left ( \begin{bmatrix} -m \\\\ 0 \end{bmatrix}_q q^{ -mn } - \begin{bmatrix} -m \\\\ 1 \end{bmatrix}_q q^{ -mn + m + 1 } + \cdots + (-1)^n \begin{bmatrix} -m \\\\ n \end{bmatrix}_q q^{ n} \right ) \\\\
-= & (-1)^n \left ( \begin{bmatrix} -m - 1 \\\\ 0 \end{bmatrix}_q q^{ -mn } - \begin{bmatrix} -m \\\\ 1 \end{bmatrix}_q q^{ -mn + m + 1 } + \cdots + (-1)^n \begin{bmatrix} -m \\\\ n \end{bmatrix}_q q^{ n } \right ) \\\\
-= & (-1)^n \left ( -\begin{bmatrix} -m - 1 \\\\ 1 \end{bmatrix}_q q^{ -mn + m } + \begin{bmatrix} -m \\\\ 2 \end{bmatrix}_q q^{ -mn + 2m + 2 } + \cdots + (-1)^n \begin{bmatrix} -m \\\\ n \end{bmatrix}_q q^{ n } \right ) \\\\
-= & (-1)^n \left ( (-1)^{ n-1 } \begin{bmatrix} -m -1 \\\\ n-1 \end{bmatrix}_q q^{ -m } + (-1)^n \begin{bmatrix} -m \\\\ n \end{bmatrix}_q q^{ n } \right ) \\\\
-= & \begin{bmatrix} - m - 1 \\\\ n \end{bmatrix}_q.
-\end{align*}</script><p>To prove the generalized version of <a href="#eqI10">$\mathrm{(I10)}$</a>, we just need to use induction,</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-(x + q^m a)^{ n+1 } _q (x + q^{n+1} a) ^{ -m } _q  & =(x + q^{m-1} a)^{ n } _q ( x + q^{ m + n } a)^1_q (x + q^{n+1} a) ^{ -m } _q  \\\\ &= (x + q^{m-1} a)^n (x + q^n a)^{ - m + 1} _q. \\\\  (x + q^m a)^{-n - 1} _q (x + q^{-n - 1} a) ^{ -m } _q &= (x + q^{m + 1} a )^{ -n } _q (x + q^{m - n} a)^{ - 1 } _q ( x + q^{ -n - 1 } a)^{-m} _q \\\\
-& = (x + q^{m + 1} a )^{ -n } _q ( x + q^{ - n } a )_q^{-m-1}.
-\end{align*}</script><p>One can see <a href="#eqI10">$\mathrm{(I10)}$</a> holds regardless $ m , n $ are positive or not.</p>
+          <p>This note is for $q$-calculus. One needs to keep in mind that my motivation to do quantum calculus is not for difference equations but for quantum groups, so $ q = e^{\frac{\hbar}{2}}$. One can view $q$ as a generic nonzero complex number. But we are also interested in cases when $q$ is a root of $1$.</p>
+<h1 id="basic-definitions">Basic definitions</h1>
+<hr>
+<h2 id="q-numbers">q-numbers</h2>
+<p>We begin with $q$-integers. For $ n \geqslant 0 $,</p>
+<p>$$ \tag{I1} [n]_q := \frac{ q^n - q^{ -n } }{ q - q^{ -1 } } = q^{ -n + 1 } + q^{ -n + 3 } + \cdots + q^{ n - 3 } + q^{ n - 1 }. $$</p>
+<p>For simplicity, we define $[-n]_q = -[n]_q$. Then $[1]_q = 1,[0]_q = 0$. The summation formula is <span id="eqI2"></span></p>
+<p>$$ \tag{I2} [n+m]_q = q^{m}[n]_q + q^{-n}[m]_q = q^{-m}[n]_q + q^{n}[m]_q. $$</p>
+<p>Using <a href="#eqI2">$ \mathrm{(I2)} $</a>, we can write down the product formula, for $m \geqslant n \geqslant 0$,</p>
+<p>$$ \begin{align}<br>
+[m]_q [n]_q &amp; = [m]_q ( q^{- n + 1} + q^{ - n + 3 } + \cdots q^{n - 3} + q^{ n - 1 } ) \\ &amp; = ( [m + n - 1]_q - q^m[n - 1]_q ) + ( [m + n - 3]_q - q^m [n - 3]_q ) + \cdots \\  &amp; \quad + ( [m - n + 1]_q - q^{m} [1 - n]_q ) \\ &amp; = [ m + n - 1 ]_q + [ m + n - 3 ]_q + \cdots [ m - n + 1 ]_q. \tag{I3}<br>
+\end{align}  $$</p>
+<p>We will also define $q$-factorials and $q$-binomial coefficients as <span id="eqI4"> </span></p>
+<p>$$ [n]_q ! =  \prod \limits _{k=1} ^n [n]_q, \quad \left [ \begin{matrix} m \\ n \end{matrix} \right ]_q := \frac{[m]_q!}{[n]_q![m-n]_q!}, \tag{I4} $$</p>
+<p>where $m \geqslant n \geqslant 0$. Using <a href="#eqI2">$ \mathrm{(I2)} $</a> the recursion relation of $q$-binomial coefficients is given by<br>
+<span id="eqI5"></span></p>
+<p>$$<br>
+\left [ \begin{matrix} m+1 \\ n+1 \end{matrix} \right ]_q = q^{ (n-m) } \left [ \begin{matrix} m \\ n \end{matrix} \right ]_q + q^{ (n+1) } \left [ \begin{matrix} m \\ n+1 \end{matrix} \right ]_q. \tag{I5}<br>
+$$</p>
+<p>That is all for $q$-numbers. We will then work with functions<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, i.e., $q$-polynomials or $q$-series, which are usually generating functions of sequences of $q$-numbers. We will also consider $q$-analogue of differential operators, which are usually difference operators.</p>
+<h2 id="q-polynomials">q-polynomials</h2>
+<p><strong>Def I.1.</strong> Given any function $ f(x) $ of one variable $ x $, its $q$-differential is <span id="eqI6"></span><br>
+$$<br>
+\partial_q f(x) = \frac{f(qx) - f(q^{-1}x)}{qx - q^{-1}x}. \tag{I6}<br>
+$$</p>
+<p>Def I.1 makes sense for we have $ \partial_q x^n = [n]_q x^{n-1} $ and we have the following <strong>Leibniz Rule</strong>,<br>
+$$ \tag{I7}<br>
+\partial_q fg(x) = g(qx)\partial_q f(x) + f(q^{-1}x) \partial_q g(x).<br>
+$$</p>
+<p><strong>Remark</strong> One might have noted that in my setup, $q$ and $q^{-1}$ can be exchanged with each other.</p>
+<p>The $q$-analogue of $(x+a)^n$ (for $n &gt; 0$) is the polynomial</p>
+<p>$$ \tag{I8}<br>
+(x+a)_q^n :=   (x+aq^{-n+1})(x + aq^{-n + 3}) \cdots (x + aq^{n-1}),<br>
+$$</p>
+<p>and $(x+ a)^0_q = 1$. Directly by <a href="#eqI6">$\mathrm{(I6)}$</a>, <span id="eqI9"></span><br>
+$$<br>
+\partial_q (x+a)^n_q = [n]_q(x+a)_q^{n-1}. \tag{I9}<br>
+$$</p>
+<p>The product formula for $(x+a)^n_q$ is twisted too,<br>
+<span id="eqI10"> </span></p>
+<p>$$<br>
+( x + a )^{ m + n }_q = ( x + q^{-n} a )^m_q ( x + q^m a)^n_q, \tag{I10}<br>
+$$</p>
+<p>and in fact, we have the following binomial formula (just as you may have guessed, $(x+a)^n_q$ is the generating function of $q$-binomial coefficients), <span id="eqI11"></span></p>
+<p>$$ \tag{I11}<br>
+(x+a)^n_q = \sum\limits_{j=0}^n \begin{bmatrix} n \\ j \end{bmatrix}_q a^{n-j} x^j.<br>
+$$</p>
+<p>One can prove this via <a href="#eqI9">$\mathrm{(I9)}$</a> or using $q$-Taylor expansion we will talk about <a href="#thmI2">later</a>. There is a crucial point about $(x+a)^n_q$, if $n$ is even,<br>
+$$<br>
+(x-a)_q^n \Big | _{x = a} \neq 0.<br>
+$$</p>
+<p>In fact, we can introduce the very famous $q$-<strong>Pochhammer symbol</strong>,</p>
+<p>$$ \tag{I12}<br>
+(a;q)_n := (1-a)(1-aq) \cdots ( 1-aq^{n-1} ).<br>
+$$</p>
+<p>$q$-Pochhammer symbol is also called $q$-shifted factorial by many people (We shall not use this name, for we already have our version of $q$-factorials.) One can easily write down the relations between our notations and $q$-Pochhammer symbol, <span id="eqI13"> </span></p>
+<p>$$ \tag{I13}<br>
+[n]_q! = \frac{ -q^{ -\frac{ n(n+1) } {2} } } { ( q^{-1} - q )^n }( q^2 ; q^2 )_n, \quad (x - a)^n_q = x^n ( \frac{a q^{ - n + 1} }{x} ; q^2 )_n.<br>
+$$</p>
+<p>Hence,</p>
+<p>$$<br>
+(x-a)_q^n \Big | _{x = a}  = a^n ( q^{ - n + 1 } ; q^2 )_n .<br>
+$$</p>
+<h2 id="q-taylor-expansions">q-Taylor expansions</h2>
+<p><span id="thmI2"> </span></p>
+<p><strong>Thm I.2.</strong> For any polynomial $f(x)$ and any number $a$, we have the following $q$-<strong>Taylor expansion</strong>, <span id="eqI14"></span><br>
+$$ \tag{I14}<br>
+f(x) = f(a) + \sum\limits_{n=1}^\infty ( \partial_q^n f)(a) \frac{ (x - a)^n_q - a^n ( q^{ - n + 1} ; q^2 )_n }{ [ n ]_q ! }.<br>
+$$</p>
+<p><strong>Proof.</strong> By induction on the degree of $f$. Assume <a href="#eqI14">$\mathrm{(I14)}$</a> holds for all $f$ with $\deg f \le n$, then for $f$ with $\deg f = n$, using the fact that $(x - a)^k_q$ is with degree $k$ and monic,<br>
+$$<br>
+f(x) = \sum\limits_{k=0}^n c_k (x - a)^k_q,<br>
+$$<br>
+with $c_k \in \mathbb{C}$. By taking $\partial_q$, we have for $k \geqslant 1$<br>
+$$<br>
+c_k [k]_q = (\partial_q^k f)(a) \frac{1}{ [ k - 1 ]_q! }.<br>
+$$<br>
+In other words, for $k \geqslant 1$,<br>
+$$<br>
+c_k = (\partial_q^k f)(a) \frac{1}{ [ k ]_q! }.<br>
+$$</p>
+<p>Then the result follows by comparing the constant terms. $\blacksquare$</p>
+<p>With $q$-<a href="#thmI2">Taylor expansion</a>, we can write down many $q$-polynomials as generation functions of $q$-numbers, which will give us much information about $q$-numbers. For example, using <a href="#eqI11">$\mathrm{(I11)}$</a>, we can prove many properties of $q$-binomial coefficients directly, including <a href="#eqI5">$\mathrm{(I5)}$</a>. But before that, one should notice that we can extend the definitions of $q$-binomial coefficients to negative numbers, and also their generating functions. This is the first glance into the world of $q$-series. To include negative integers, we define <span id="eqI15"> </span><br>
+$$ \tag{I15}<br>
+\begin{bmatrix} m \\ n \end{bmatrix}_q := \frac{ [m]_q \cdots [m-n+1]_q }{ [n]_q! }.<br>
+$$<br>
+This definition is equivalent with <a href="#eqI4">$\mathrm{(I4)}$</a> when $m \geqslant n \geqslant 0$, but also works when $m &lt; n$. In these cases for negative powers, by extend our notations, we can write down their generating series as <span id="eqI16"> </span><br>
+$$ \tag{I16}<br>
+(x + a)^{ -m }_q := \sum \limits _{ n = 0 }^\infty \begin{bmatrix} -m \\ n \end{bmatrix}_q a^{ -n-m } x^n.<br>
+$$</p>
+<p>This definition is meaningful because we can also extend <a href="#eqI9">$\mathrm{(I9)}$</a> and <a href="#eqI10">$\mathrm{(I10)}$</a>. For $m &gt; 0$,<br>
+<span id="eqI17"> </span><br>
+$$ \tag{I17}<br>
+\partial_q ( x + a )^{ -m }_q = \sum \limits _{ n = 1 }^\infty \begin{bmatrix} -m \\ n \end{bmatrix}_q [n]_q a^{ - n - m }x^ {n-1} = [ -m ]_q (x + a)_q^{ - m - 1 }.<br>
+$$</p>
+<p>Notice that <a href="#eqI5">$\mathrm{(I5)}$</a> holds for any $m$. We can show that for $ m &gt; 0 $,<br>
+$$<br>
+\begin{align*}<br>
+&amp; (x + q^m a)^1 _q (x + q a) ^{ -m } _q = (x + a)^{ - m + 1} _q. \\ &amp; (x + q^m a)^{-1} _q (x + q^{-1} a) ^{ -m } _q = (x + a)^{ - m - 1} _q. \end{align*}<br>
+$$</p>
+<p>The second identity holds via a summation trick, $\forall n \geqslant 0$,<br>
+$$<br>
+\begin{align*}<br>
+&amp; \sum\limits _{ k = 0 } ^n (-1)^{ n-k } \begin{bmatrix} -m \\ k \end{bmatrix}_q q^{ - m n + m k + k } \\<br>
+= &amp; (-1)^n \left ( \begin{bmatrix} -m \\ 0 \end{bmatrix}_q q^{ -mn } - \begin{bmatrix} -m \\ 1 \end{bmatrix}_q q^{ -mn + m + 1 } + \cdots + (-1)^n \begin{bmatrix} -m \\ n \end{bmatrix}_q q^{ n} \right ) \\<br>
+= &amp; (-1)^n \left ( \begin{bmatrix} -m - 1 \\ 0 \end{bmatrix}_q q^{ -mn } - \begin{bmatrix} -m \\ 1 \end{bmatrix}_q q^{ -mn + m + 1 } + \cdots + (-1)^n \begin{bmatrix} -m \\ n \end{bmatrix}_q q^{ n } \right ) \\<br>
+= &amp; (-1)^n \left ( -\begin{bmatrix} -m - 1 \\ 1 \end{bmatrix}_q q^{ -mn + m } + \begin{bmatrix} -m \\ 2 \end{bmatrix}_q q^{ -mn + 2m + 2 } + \cdots + (-1)^n \begin{bmatrix} -m \\ n \end{bmatrix}_q q^{ n } \right ) \\<br>
+= &amp; (-1)^n \left ( (-1)^{ n-1 } \begin{bmatrix} -m -1 \\ n-1 \end{bmatrix}_q q^{ -m } + (-1)^n \begin{bmatrix} -m \\ n \end{bmatrix}_q q^{ n } \right ) \\<br>
+= &amp; \begin{bmatrix} - m - 1 \\ n \end{bmatrix}_q.<br>
+\end{align*}<br>
+$$</p>
+<p>To prove the generalized version of <a href="#eqI10">$\mathrm{(I10)}$</a>, we just need to use induction,<br>
+$$<br>
+\begin{align*}<br>
+(x + q^m a)^{ n+1 } _q (x + q^{n+1} a) ^{ -m } _q  &amp; =(x + q^{m-1} a)^{ n } _q ( x + q^{ m + n } a)^1_q (x + q^{n+1} a) ^{ -m } _q  \\ &amp;= (x + q^{m-1} a)^n (x + q^n a)^{ - m + 1} _q. \\  (x + q^m a)^{-n - 1} _q (x + q^{-n - 1} a) ^{ -m } _q &amp;= (x + q^{m + 1} a )^{ -n } _q (x + q^{m - n} a)^{ - 1 } _q ( x + q^{ -n - 1 } a)^{-m} _q \\<br>
+&amp; = (x + q^{m + 1} a )^{ -n } _q ( x + q^{ - n } a )_q^{-m-1}.<br>
+\end{align*}<br>
+$$</p>
+<p>One can see <a href="#eqI10">$\mathrm{(I10)}$</a> holds regardless $ m , n $ are positive or not.</p>
 <p>Using <a href="#eqI10">$\mathrm{(I10)}$</a>, we can show the following properties, which takes <a href="#eqI5">$\mathrm{(I5)}$</a> as a special case.</p>
 <p><span id="propI3"> </span></p>
-<p><strong>Prop I.3.</strong> The following identities hold for $n \geqslant 0$, <span id="eqI18"> </span></p>
-<script type="math/tex; mode=display">\tag{I18}
-\begin{bmatrix} m_1 + m_2 \\\\ n \end{bmatrix}_q = \sum \limits _ {k=0} ^ n q^{ m_2n - (m_1 + m_2)k } \begin{bmatrix} m_1 \\\\ k \end{bmatrix}_q \begin{bmatrix} m_2 \\\\ n-k \end{bmatrix}_q.</script><p>Many identities can be shown in this way. Since we have defined the $q$-Pochhammer symbols and related it to our $q$-factorials as <a href="#eqI13">$\mathrm{(I13)}$</a>, it is a good exercise to prove identities about them.</p>
-<p> <span id="coroI4"> </span><br><strong>Coro I.4.</strong> The $q$-Pochhammer symbols satisfy the following identities,</p>
+<p><strong>Prop I.3.</strong> The following identities hold for $n \geqslant 0$, <span id="eqI18"> </span><br>
+$$ \tag{I18}<br>
+\begin{bmatrix} m_1 + m_2 \\ n \end{bmatrix}_q = \sum \limits _ {k=0} ^ n q^{ m_2n - (m_1 + m_2)k } \begin{bmatrix} m_1 \\ k \end{bmatrix}_q \begin{bmatrix} m_2 \\ n-k \end{bmatrix}_q.<br>
+$$</p>
+<p>Many identities can be shown in this way. Since we have defined the $q$-Pochhammer symbols and related it to our $q$-factorials as <a href="#eqI13">$\mathrm{(I13)}$</a>, it is a good exercise to prove identities about them.</p>
+<p><span id="coroI4"> </span><br>
+<strong>Coro I.4.</strong> The $q$-Pochhammer symbols satisfy the following identities,</p>
 <ul>
-<li>$ (x;q^2)_n = \sum \limits _{ k = 0 } ^n \begin{bmatrix} n \\ k \end{bmatrix}_q ( - q^{n-1 } x)^k$, </li>
+<li>$ (x;q^2)_n = \sum \limits _{ k = 0 } ^n \begin{bmatrix} n \\ k \end{bmatrix}_q ( - q^{n-1 } x)^k$,</li>
 <li>$ (- q;q^2)_n = \sum \limits _{ k = 0 } ^n \begin{bmatrix} n \\ k \end{bmatrix}_q  q^{nk} $,</li>
 <li>$ \frac{ 1 } { ( x ;q^2)_n } = \sum \limits _{ k \geqslant 0 } \begin{bmatrix} n + k - 1 \\ k \end{bmatrix}_q (  q^{n-1 } x)^k $.</li>
 </ul>
-<h2 id="q-series-examples"><a href="#q-series-examples" class="headerlink" title="q-series: examples"></a>q-series: examples</h2><p>$q$-series we have met up with are produced via formal power series. Note that $q$-Pochhammer symbols itself can also produce $q$-series if we allow infinite products, <span id="eqI19"> </span></p>
-<script type="math/tex; mode=display">\tag{I19}
-(x;q)_\infty := \prod \limits _{n = 0} ^ \infty (1 - q^n x).</script><p>The above definition makes sense because for $|q| &lt; 1 $, <a href="#eqI19">$\mathrm{(I19)}$</a> defines an analytic function. Such a construction indicates that we need to study some limiting behavior of $q$-numbers and $q$-polynomials. For $|q| &lt; 1$,</p>
-<script type="math/tex; mode=display">
-\begin{align}
-\lim \limits_{n \to +\infty } q^n [ n ]_q  = - \frac { 1 } { q - q^{-1} },
-\end{align}</script><p>and using this, we have <span id="eqI20"> </span></p>
-<script type="math/tex; mode=display">\tag{I20}
-\lim \limits_{n \to + \infty } q^{ n k - k^2 } \begin{bmatrix} n \\\\ k \end{bmatrix}_q = \frac { 1 }{ \prod \limits _{ j = 1 } ^k ( 1 - q^{ 2j } ) } = \frac { 1 }{ ( q^2; q^2)_k }.</script><p>Combine <a href="#eqI20">$\mathrm{(I20)}$</a> with the $q$-series expansion of finite $q$-Pochhammer symbols, we have<br><span id="eqI21"> </span></p>
-<script type="math/tex; mode=display">\tag{I21}
-(x;q) _{\infty} = \sum \limits _{k \geqslant 0} \frac{ (-q^{\frac{k-1}{2}} x ) ^k }{ (q;q)_k },</script><p>and <span id="eqI22"> </span></p>
-<script type="math/tex; mode=display">\tag{I22}
-\frac{ 1 }{ (x;q) _{\infty} } = \sum _{k \geqslant 0} \frac{ x^k }{ (q;q)_k } .</script><p><a href="#eqI21">$\mathrm{ (I21) }$</a> and <a href="#eqI22">$\mathrm{ (I22) }$</a> are the very famous <strong>Euler identities</strong>. From <a href="#eqI13">$\mathrm{ (I13) }$</a>, we can write</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix} m \\\\ n \end{bmatrix} _{q}  = q^{ n^{2} - mn} \frac{ (q^{ 2m-2n + 2}; q^2 ) _n }{ (q^2 ; q^2)_n }.</script><p>Using this relation and <a href="#coroI4">Coro $\mathrm{I.4}$</a>,<br><span id="coroI5"> </span></p>
-<p><strong>Coro I.5.</strong> The $q$-<strong>binomial theorem</strong> for $q$-Pochhammer symbols holds,</p>
-<script type="math/tex; mode=display">\tag{I23}
-\frac{ (ax;q) _\infty }{ (q;q) _\infty } = \sum _{n\geqslant 0 } \frac{(a ;q) _n}{ (q;q) _n} x^n.</script><h1 id="q-serise"><a href="#q-serise" class="headerlink" title="q-serise"></a>q-serise</h1><p>We have seen many different $q$-series from $q$-taylor expansions or taking limits. However, to include $q$-series is not just for curiosity. It appears almost everywhere like  difference equations, modular forms, quantum groups and quantum invariants.  </p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><blockquote id="fn_kac">
-<sup>kac</sup>. Kac, Victor G., and Pokman Cheung, <a href="http://engime.org/pars_docs/refs/81/80745/80745.pdf" target="_blank" rel="noopener"><em>Quantum calculus</em></a>, Vol. 113. New York: Springer, 2002.<a href="#reffn_kac" title="Jump back to footnote [kac] in the text."> &#8617;</a>
-</blockquote>
+<h2 id="q-series-examples">q-series: examples</h2>
+<p>$q$-series we have met up with are produced via formal power series. Note that $q$-Pochhammer symbols itself can also produce $q$-series if we allow infinite products, <span id="eqI19"> </span><br>
+$$ \tag{I19}<br>
+(x;q)_\infty := \prod \limits _{n = 0} ^ \infty (1 - q^n x).<br>
+$$</p>
+<p>The above definition makes sense because for $|q| &lt; 1 $, <a href="#eqI19">$\mathrm{(I19)}$</a> defines an analytic function. Such a construction indicates that we need to study some limiting behavior of $q$-numbers and $q$-polynomials. For $|q| &lt; 1$,</p>
+<p>$$<br>
+\begin{align}<br>
+\lim \limits_{n \to +\infty } q^n [ n ]_q  = - \frac { 1 } { q - q^{-1} },<br>
+\end{align}<br>
+$$</p>
+<p>and using this, we have <span id="eqI20"> </span></p>
+<p>$$ \tag{I20}<br>
+\lim \limits_{n \to + \infty } q^{ n k - k^2 } \begin{bmatrix} n \\ k \end{bmatrix}_q = \frac { 1 }{ \prod \limits _{ j = 1 } ^k ( 1 - q^{ 2j } ) } = \frac { 1 }{ ( q^2; q^2)_k }.<br>
+$$</p>
+<p>Combine <a href="#eqI20">$\mathrm{(I20)}$</a> with the $q$-series expansion of finite $q$-Pochhammer symbols, we have<br>
+<span id="eqI21"> </span></p>
+<p>$$ \tag{I21}<br>
+(x;q) _{\infty} = \sum \limits _{k \geqslant 0} \frac{ (-q^{\frac{k-1}{2}} x ) ^k }{ (q;q)_k },<br>
+$$</p>
+<p>and <span id="eqI22"> </span></p>
+<p>$$ \tag{I22}<br>
+\frac{ 1 }{ (x;q) _{\infty} } = \sum _{k \geqslant 0} \frac{ x^k }{ (q;q)_k } .<br>
+$$</p>
+<p><a href="#eqI21">$\mathrm{ (I21) }$</a> and <a href="#eqI22">$\mathrm{ (I22) }$</a> are the very famous <strong>Euler identities</strong>. From <a href="#eqI13">$\mathrm{ (I13) }$</a>, we can write</p>
+<p>$$<br>
+\begin{bmatrix} m \\ n \end{bmatrix} _{q}  = q^{ n^{2} - mn} \frac{ (q^{ 2m-2n + 2}; q^2 ) _n }{ (q^2 ; q^2)_n }.<br>
+$$<br>
+Using this relation and <a href="#coroI4">Coro $\mathrm{I.4}$</a>,<br>
+<span id="coroI5"> </span></p>
+<p><strong>Coro I.5.</strong> The $q$-<strong>binomial theorem</strong> for $q$-Pochhammer symbols holds,<br>
+$$ \tag{I23}<br>
+\frac{ (ax;q) _\infty }{ (q;q) _\infty } = \sum _{n\geqslant 0 } \frac{(a ;q) _n}{ (q;q) _n} x^n.<br>
+$$</p>
+<p>This magical identity along with its two special cases, the Euler identities <a href="#eqI21">$\mathrm{(I21)}$</a> and <a href="#eqI22">$\mathrm{(I22)}$</a> are the very beginning of the whole beautiful theory of $q$-series, which indicates that a $q$-series usually have two faces, a face of formal power series, constructed by power expansions, hiding all the information inside the coefficients and usually related with difference equations, and another face of infinite products, which we have seldom seen in classical calculus. With its two faces, $q$-series in fact build a bridge connecting the analytical world and the algebraic world. Further discussion for $q$-series is left for the next section.</p>
+<h1 id="q-series">q-series</h1>
+<p>To include $q$-series is not just for curiosity. It appears almost everywhere like  difference equations, modular forms, quantum groups and quantum invariants. But we shall start with the Euler identities <a href="#eqI21">$\mathrm{(I21)}$</a> and<a href="#eqI22">$(\mathrm{I22})$</a> we have seen before. They both relate infinite sums with infinite products. In order to make the analytic side of the whole theory meaningful, we usually assume $|q| &lt; 1$, but algebraically, $q$ is still a formal variable.</p>
+<h1 id="references">References</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Kac, Victor G., and Pokman Cheung, <a href="http://engime.org/pars_docs/refs/81/80745/80745.pdf" target="_blank" rel="noopener"><em>Quantum calculus</em></a>, Vol. 113. New York: Springer, 2002. <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 
         
       </div>
@@ -477,7 +557,7 @@ c_k = (\partial_q^k f)(a) \frac{1}{ [ k ]_q! }.</script><p>Then the result follo
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">Basic definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#q-numbers"><span class="nav-number">1.1.</span> <span class="nav-text">q-numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-polynomials"><span class="nav-number">1.2.</span> <span class="nav-text">q-polynomials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-Taylor-expansions"><span class="nav-number">1.3.</span> <span class="nav-text">q-Taylor expansions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-series-examples"><span class="nav-number">1.4.</span> <span class="nav-text">q-series: examples</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#q-serise"><span class="nav-number">2.</span> <span class="nav-text">q-serise</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-definitions"><span class="nav-number">1.</span> <span class="nav-text">Basic definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#q-numbers"><span class="nav-number">1.1.</span> <span class="nav-text">q-numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-polynomials"><span class="nav-number">1.2.</span> <span class="nav-text">q-polynomials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-taylor-expansions"><span class="nav-number">1.3.</span> <span class="nav-text">q-Taylor expansions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-series-examples"><span class="nav-number">1.4.</span> <span class="nav-text">q-series: examples</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#q-series"><span class="nav-number">2.</span> <span class="nav-text">q-series</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#references"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>

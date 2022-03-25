@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/research/LDT/index.html</loc>
+    
+    <lastmod>2022-03-25T00:40:52.321Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/research/Notes/q_Calculus/index.html</loc>
+    
+    <lastmod>2022-03-21T02:18:32.660Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2022-03-18T16:24:50.380Z</lastmod>
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/research/Notes/q_Calculus/index.html</loc>
-    
-    <lastmod>2022-03-18T14:27:20.960Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/research/Notes/SL2_spin/index.html</loc>
     
     <lastmod>2022-03-15T15:18:23.214Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/research/LDT/index.html</loc>
-    
-    <lastmod>2022-03-15T15:08:46.872Z</lastmod>
     
   </url>
   
